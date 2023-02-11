@@ -1,14 +1,29 @@
 package ru.aston.sarancha_lesson2
 
+import android.app.Activity
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import ru.aston.sarancha_lesson2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val activityResult =
+        registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result: ActivityResult ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                result.data?.getStringExtra(SECOND_ACTIVITY_ET_KEY)?.let {
+                    if (it.isNotBlank()) binding.tvMessage.text = it
+                }
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +32,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnGoToSecondActivity.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
-            startActivityForResult(intent, REQUEST_CODE)
+
+            when (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                true -> {activityResult.launch(intent)}
+                else -> {startActivityForResult(intent, REQUEST_CODE)}
+            }
         }
     }
 
@@ -37,7 +56,9 @@ class MainActivity : AppCompatActivity() {
                 true -> {
                     outState.putString(SECOND_ACTIVITY_ET_KEY, message)
                 }
-                false -> { Log.d("@@@", "etMessage is empty")}
+                false -> {
+                    Log.d("@@@", "etMessage is empty")
+                }
             }
         }
         super.onSaveInstanceState(outState)
