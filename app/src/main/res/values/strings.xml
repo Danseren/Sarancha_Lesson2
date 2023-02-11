@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Sarancha_Lesson2</string>
-    <string name="tvMessage">English selected</string>
+    <string name="tvMessage">Here will be the text from the second Activity</string>
+    <string name="tvLanguage">English selected</string>
     <string name="btnGoToSecondActivity">Go to the second Activity</string>
     <string name="etMessage">Enter your message</string>
     <string name="btnGoToFirstActivity">Go to the first Activity</string>

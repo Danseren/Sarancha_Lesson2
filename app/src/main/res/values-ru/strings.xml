@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Саранча_Урок2</string>
-    <string name="tvMessage">Выбран Русский язык</string>
+    <string name="tvMessage">Здесь будет текст из второго Активити</string>
+    <string name="tvLanguage">Выбран Русский язык</string>
     <string name="btnGoToSecondActivity">Перейти на вторую Активити</string>
     <string name="etMessage">Введите Ваше сообщение</string>
     <string name="btnGoToFirstActivity">>Перейти на первую Активити</string>
