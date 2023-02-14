@@ -1,77 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/paddingExtraSmall"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FrameLayout" />
+        android:text="@string/tvFrameLayout"
+        android:textColor="@color/black"
+        android:textSize="@dimen/TextSizeLarge"
+        android:layout_marginTop="@dimen/marginMedium"
+        android:layout_gravity="top|center"/>
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/imageViewAustria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start|top"
+        android:layout_marginTop="@dimen/marginLarge"
         android:src="@drawable/flag_austria" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewColombia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|top"
+        android:layout_marginTop="@dimen/marginLarge"
         android:src="@drawable/flag_colombia" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageViewDenmark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|top"
+        android:layout_marginTop="@dimen/marginLarge"
         android:src="@drawable/flag_denmark" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageViewItaly"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start|center"
         android:src="@drawable/flag_italy" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageViewMadagascar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/flag_madagascar" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imageViewPoland"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|end"
         android:src="@drawable/flag_poland" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imageViewSwitzerland"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start|bottom"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:layout_marginStart="@dimen/marginMedium"
         android:src="@drawable/flag_switzerland" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imageViewThailand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|bottom"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:layout_marginEnd="@dimen/marginMedium"
         android:src="@drawable/flag_thailand" />
 
     <Button
         android:id="@+id/btnGoToLinear"
         android:text="@string/btnGoToLinear"
+        android:layout_marginBottom="@dimen/marginMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"/>
+        android:layout_gravity="center|bottom"/>
 
 </FrameLayout>
