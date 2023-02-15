@@ -9,126 +9,184 @@
     <ImageView
         android:id="@+id/ivHeader"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitStart"
+        android:src="@drawable/header"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/header"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ivLogo"
+        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/ivHeader"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/logo"
         app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/logo"/>
+        app:layout_constraintTop_toBottomOf="@+id/ivHeader"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.28"/>
 
     <TextView
         android:id="@+id/tvLogoHeader"
-        android:layout_width="wrap_content"
+        style="@style/TitleTextStyle"
+        android:layout_width="0dp"
+        android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/ivHeader"
+        android:text="ИТ-решения для развития бизнеса"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textStyle="bold"
-        android:text="ИТ-решения для развития бизнеса"/>
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+        app:layout_constraintTop_toBottomOf="@id/ivHeader" />
 
     <TextView
         android:id="@+id/tvLogoText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvLogoHeader"
+        style="@style/SmallTextStyle"
+        android:text="Разработка программного обеспечения"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Разработка программного обеспечения"/>
+        app:layout_constraintTop_toBottomOf="@id/tvLogoHeader" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="ivLogo, tvLogoText" />
 
     <TextView
         android:id="@+id/tvAboutHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/ivLogo"
+        android:text="О нас:"
+        android:layout_marginStart="8dp"
+        style="@style/TitleTextStyle"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:textStyle="bold"
-        android:text="О нас:"/>
+        app:layout_constraintTop_toBottomOf="@id/barrier" />
 
     <TextView
         android:id="@+id/tvAbout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvAboutHeader"
-        app:layout_constraintStart_toStartOf="parent"
+        style="@style/MediumTextStyle"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Aston – компания по разработке ПО с полным циклом услуг. Уже 15 лет мы помогаем заказчикам по всему миру трансформировать бизнес, создавая эффективные мобильные и десктопные решения."
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Aston – компания по разработке ПО с полным циклом услуг. Уже 15 лет мы помогаем заказчикам по всему миру трансформировать бизнес, создавая мобильные и десктопные решения."/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAboutHeader" />
 
     <TextView
         android:id="@+id/tvOffice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvAbout"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Офисы"
+        android:layout_marginTop="8dp"
+        style="@style/TitleTextStyle"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textStyle="bold"
-        android:text="Офисы"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAbout" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipMoscow"
-        android:layout_width="wrap_content"
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:chipSpacingHorizontal="4dp"
         android:layout_height="wrap_content"
-        android:text="Москва"
-        app:layout_constraintTop_toBottomOf="@id/tvOffice"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvOffice">
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipKazan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Казань"
-        app:layout_constraintTop_toBottomOf="@id/tvOffice"
-        app:layout_constraintStart_toEndOf="@id/chipMoscow"/>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMoscow"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Москва"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOffice" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipRostovOnDon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ростов-на-Дону"
-        app:layout_constraintTop_toBottomOf="@id/tvOffice"
-        app:layout_constraintStart_toEndOf="@id/chipKazan"/>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipKazan"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Казань"
+            app:layout_constraintStart_toEndOf="@id/chipMoscow"
+            app:layout_constraintTop_toBottomOf="@id/tvOffice" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipMinsk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Минск"
-        app:layout_constraintTop_toBottomOf="@id/tvOffice"
-        app:layout_constraintStart_toEndOf="@id/chipRostovOnDon"/>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipRostovOnDon"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ростов-на-Дону"
+            app:layout_constraintStart_toEndOf="@id/chipKazan"
+            app:layout_constraintTop_toBottomOf="@id/tvOffice" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chipGomel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Гомель"
-        app:layout_constraintTop_toBottomOf="@id/chipMoscow"
-        app:layout_constraintStart_toStartOf="parent"/>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMinsk"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Минск"
+            app:layout_constraintStart_toEndOf="@id/chipRostovOnDon"
+            app:layout_constraintTop_toBottomOf="@id/tvOffice" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipGomel"
+            style="@style/CustomChipStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Гомель"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chipMoscow" />
+    </com.google.android.material.chip.ChipGroup>
 
     <Button
         android:id="@+id/btnContacts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/chipGomel"
+        android:text="Контакты"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="Контакты"/>
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
 
     <Button
         android:id="@+id/btnVacancies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/chipGomel"
+        android:text="Вакансии"
         app:layout_constraintStart_toEndOf="@+id/btnContacts"
-        android:text="Контакты"/>
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+
     <Button
         android:id="@+id/btnGallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/chipGomel"
+        android:text="Галерея"
         app:layout_constraintStart_toEndOf="@+id/btnVacancies"
-        android:text="Галерея"/>
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:flow_wrapMode="chain"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:constraint_referenced_ids="btnContacts, btnVacancies, btnGallery"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
