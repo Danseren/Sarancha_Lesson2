@@ -3,4 +3,6 @@
     <string name="btnGoToLinear">Go to Linear</string>
     <string name="btnGoToGrid">Go to Grid</string>
     <string name="tvFrameLayout">FrameLayout</string>
+    <string name="tvLinearLayout">LinearLayout</string>
+    <string name="tvGridLayout">GridLayout</string>
 </resources>

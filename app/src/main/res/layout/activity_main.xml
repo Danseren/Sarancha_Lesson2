@@ -9,11 +9,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="@dimen/marginMedium"
         android:text="@string/tvFrameLayout"
         android:textColor="@color/black"
-        android:textSize="@dimen/TextSizeLarge"
-        android:layout_marginTop="@dimen/marginMedium"
-        android:layout_gravity="top|center"/>
+        android:textSize="@dimen/TextSizeLarge" />
 
     <ImageView
         android:id="@+id/imageViewAustria"
@@ -65,8 +65,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start|bottom"
-        android:layout_marginBottom="@dimen/marginLarge"
         android:layout_marginStart="@dimen/marginMedium"
+        android:layout_marginBottom="@dimen/marginLarge"
         android:src="@drawable/flag_switzerland" />
 
     <ImageView
@@ -74,16 +74,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:layout_marginBottom="@dimen/marginLarge"
         android:layout_marginEnd="@dimen/marginMedium"
+        android:layout_marginBottom="@dimen/marginLarge"
         android:src="@drawable/flag_thailand" />
 
     <Button
         android:id="@+id/btnGoToLinear"
-        android:text="@string/btnGoToLinear"
-        android:layout_marginBottom="@dimen/marginMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|bottom"/>
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="@dimen/marginMedium"
+        android:text="@string/btnGoToLinear" />
 
 </FrameLayout>
