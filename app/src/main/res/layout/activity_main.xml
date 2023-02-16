@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/contentDescription"
         android:scaleType="fitStart"
         android:src="@drawable/header"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,8 +22,9 @@
         android:id="@+id/ivLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/marginMedium"
+        android:layout_marginTop="@dimen/marginLarge"
+        android:contentDescription="@string/contentDescription"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +42,9 @@
         style="@style/TitleTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="ИТ-решения для развития бизнеса"
+        android:layout_marginTop="@dimen/marginLarge"
+        android:contentDescription="@string/contentDescription"
+        android:text="@string/tvLogoHeader"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@id/ivHeader" />
@@ -51,7 +54,8 @@
         style="@style/SmallTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Разработка программного обеспечения"
+        android:contentDescription="@string/contentDescription"
+        android:text="@string/tvLogoText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@id/tvLogoHeader" />
@@ -68,9 +72,10 @@
         style="@style/TitleTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="О нас:"
+        android:layout_marginStart="@dimen/marginMedium"
+        android:layout_marginTop="@dimen/marginMedium"
+        android:contentDescription="@string/contentDescription"
+        android:text="@string/tvAboutHeader"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barrier" />
 
@@ -79,9 +84,10 @@
         style="@style/MediumTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="Aston – компания по разработке ПО с полным циклом услуг. Уже 15 лет мы помогаем заказчикам по всему миру трансформировать бизнес, создавая эффективные мобильные и десктопные решения."
+        android:layout_marginStart="@dimen/marginMedium"
+        android:layout_marginEnd="@dimen/marginLarge"
+        android:contentDescription="@string/contentDescription"
+        android:text="@string/tvAbout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAboutHeader" />
@@ -91,8 +97,9 @@
         style="@style/TitleTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Офисы"
+        android:layout_marginTop="@dimen/marginMedium"
+        android:contentDescription="@string/contentDescription"
+        android:text="@string/tvOffice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAbout" />
@@ -101,9 +108,9 @@
         android:id="@+id/chipGroup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:chipSpacingHorizontal="4dp"
+        android:layout_marginStart="@dimen/marginMedium"
+        android:layout_marginEnd="@dimen/marginMedium"
+        app:chipSpacingHorizontal="@dimen/chipSpacingHorizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvOffice">
@@ -113,7 +120,8 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Москва"
+            android:contentDescription="@string/contentDescription"
+            android:text="@string/chipMoscow"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvOffice" />
 
@@ -122,7 +130,8 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Казань"
+            android:contentDescription="@string/contentDescription"
+            android:text="@string/chipKazan"
             app:layout_constraintStart_toEndOf="@id/chipMoscow"
             app:layout_constraintTop_toBottomOf="@id/tvOffice" />
 
@@ -131,7 +140,8 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ростов-на-Дону"
+            android:contentDescription="@string/contentDescription"
+            android:text="@string/chipRostovOnDon"
             app:layout_constraintStart_toEndOf="@id/chipKazan"
             app:layout_constraintTop_toBottomOf="@id/tvOffice" />
 
@@ -140,7 +150,8 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Минск"
+            android:contentDescription="@string/contentDescription"
+            android:text="@string/chipMinsk"
             app:layout_constraintStart_toEndOf="@id/chipRostovOnDon"
             app:layout_constraintTop_toBottomOf="@id/tvOffice" />
 
@@ -149,16 +160,19 @@
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Гомель"
+            android:contentDescription="@string/contentDescription"
+            android:text="@string/chipGomel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/chipMoscow" />
+
     </com.google.android.material.chip.ChipGroup>
 
     <Button
         android:id="@+id/btnContacts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Контакты"
+        android:contentDescription="@string/contentDescription"
+        android:text="@string/btnContacts"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
 
@@ -166,7 +180,8 @@
         android:id="@+id/btnVacancies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Вакансии"
+        android:contentDescription="@string/contentDescription"
+        android:text="@string/btnVacancies"
         app:layout_constraintStart_toEndOf="@+id/btnContacts"
         app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
 
@@ -174,7 +189,8 @@
         android:id="@+id/btnGallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Галерея"
+        android:contentDescription="@string/contentDescription"
+        android:text="@string/btnGallery"
         app:layout_constraintStart_toEndOf="@+id/btnVacancies"
         app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
 
@@ -182,8 +198,8 @@
         android:id="@+id/flow"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:paddingStart="@dimen/paddingLarge"
+        android:paddingEnd="@dimen/paddingLarge"
         app:constraint_referenced_ids="btnContacts, btnVacancies, btnGallery"
         app:flow_wrapMode="chain"
         app:layout_constraintEnd_toEndOf="parent"
@@ -194,6 +210,7 @@
         android:id="@+id/progress_circular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/contentDescription"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

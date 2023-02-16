@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Aston intensive</string>
+    <string name="contentDescription">content description</string>
+    <string name="tvLogoHeader">ИТ-решения для развития бизнеса</string>
+    <string name="tvLogoText">Разработка программного обеспечения</string>
+    <string name="tvAboutHeader">О нас:</string>
+    <string name="tvAbout">Aston – компания по разработке ПО с полным циклом услуг. Уже 15 лет мы помогаем заказчикам по всему миру трансформировать бизнес, создавая эффективные мобильные и десктопные решения.</string>
+    <string name="tvOffice">Офисы</string>
+    <string name="chipMoscow">Москва</string>
+    <string name="chipKazan">Казань</string>
+    <string name="chipRostovOnDon">Ростов-на-Дону</string>
+    <string name="chipMinsk">Минск</string>
+    <string name="chipGomel">Гомель</string>
+    <string name="btnContacts">Контакты</string>
+    <string name="btnVacancies">Вакансии</string>
+    <string name="btnGallery">Галерея</string>
 </resources>
