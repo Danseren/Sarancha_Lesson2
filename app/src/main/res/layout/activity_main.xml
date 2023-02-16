@@ -19,28 +19,28 @@
 
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/logo"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivHeader"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"/>
+        app:layout_constraintTop_toBottomOf="@+id/ivHeader" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineVertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.28"/>
+        app:layout_constraintGuide_percent="0.28" />
 
     <TextView
         android:id="@+id/tvLogoHeader"
         style="@style/TitleTextStyle"
         android:layout_width="0dp"
-        android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="ИТ-решения для развития бизнеса"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
@@ -48,12 +48,12 @@
 
     <TextView
         android:id="@+id/tvLogoText"
+        style="@style/SmallTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/SmallTextStyle"
         android:text="Разработка программного обеспечения"
-        app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
         app:layout_constraintTop_toBottomOf="@id/tvLogoHeader" />
 
     <androidx.constraintlayout.widget.Barrier
@@ -65,20 +65,20 @@
 
     <TextView
         android:id="@+id/tvAboutHeader"
+        style="@style/TitleTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="О нас:"
         android:layout_marginStart="8dp"
-        style="@style/TitleTextStyle"
         android:layout_marginTop="8dp"
+        android:text="О нас:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barrier" />
 
     <TextView
         android:id="@+id/tvAbout"
+        style="@style/MediumTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/MediumTextStyle"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         android:text="Aston – компания по разработке ПО с полным циклом услуг. Уже 15 лет мы помогаем заказчикам по всему миру трансформировать бизнес, создавая эффективные мобильные и десктопные решения."
@@ -88,11 +88,11 @@
 
     <TextView
         android:id="@+id/tvOffice"
+        style="@style/TitleTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Офисы"
         android:layout_marginTop="8dp"
-        style="@style/TitleTextStyle"
+        android:text="Офисы"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAbout" />
@@ -100,10 +100,10 @@
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         app:chipSpacingHorizontal="4dp"
-        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvOffice">
@@ -179,14 +179,25 @@
         app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
 
     <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chipGroup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:flow_wrapMode="chain"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        app:constraint_referenced_ids="btnContacts, btnVacancies, btnGallery"/>
+        app:constraint_referenced_ids="btnContacts, btnVacancies, btnGallery"
+        app:flow_wrapMode="chain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAbout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
