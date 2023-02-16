@@ -12,8 +12,8 @@
         android:layout_height="0dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/contentDescription"
-        android:scaleType="fitStart"
-        android:src="@drawable/header"
+        android:scaleType="center"
+        android:src="@drawable/header_land"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,9 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginMedium"
-        android:layout_marginTop="@dimen/marginLarge"
+        android:layout_marginTop="@dimen/marginSmall"
         android:contentDescription="@string/contentDescription"
-        android:src="@drawable/logo"
+        android:src="@drawable/logo_land"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivHeader" />
@@ -35,14 +35,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.28" />
+        app:layout_constraintGuide_percent="0.25" />
 
     <TextView
         android:id="@+id/tvLogoHeader"
         style="@style/TitleTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginLarge"
+        android:layout_marginTop="@dimen/marginSmall"
         android:contentDescription="@string/contentDescription"
         android:text="@string/tvLogoHeader"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +81,7 @@
 
     <TextView
         android:id="@+id/tvAbout"
-        style="@style/MediumTextStyle"
+        style="@style/SmallTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/marginMedium"
@@ -100,7 +100,6 @@
         android:layout_marginTop="@dimen/marginMedium"
         android:contentDescription="@string/contentDescription"
         android:text="@string/tvOffice"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAbout" />
 
@@ -112,8 +111,8 @@
         android:layout_marginEnd="@dimen/marginMedium"
         app:chipSpacingHorizontal="@dimen/chipSpacingHorizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvOffice">
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+        app:layout_constraintTop_toBottomOf="@id/tvAbout">
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipMoscow"
@@ -137,7 +136,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/contentDescription"
-            android:text="@string/chipRostovOnDon" />
+            android:text="@string/chipRostovOnDon"
+            app:layout_constraintStart_toEndOf="@id/chipKazan"
+            app:layout_constraintTop_toBottomOf="@id/tvOffice" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipMinsk"
@@ -145,7 +146,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/contentDescription"
-            android:text="@string/chipMinsk"/>
+            android:text="@string/chipMinsk"
+            app:layout_constraintStart_toEndOf="@id/chipRostovOnDon"
+            app:layout_constraintTop_toBottomOf="@id/tvOffice" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipGomel"
@@ -153,7 +156,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/contentDescription"
-            android:text="@string/chipGomel" />
+            android:text="@string/chipGomel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chipMoscow" />
 
     </com.google.android.material.chip.ChipGroup>
 
