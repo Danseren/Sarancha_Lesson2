@@ -145,7 +145,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/contentDescription"
-            android:text="@string/chipMinsk"/>
+            android:text="@string/chipMinsk" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipGomel"
