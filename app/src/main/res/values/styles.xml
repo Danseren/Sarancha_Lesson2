@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="DefaultClockStyle">
         <item name="clockColor">#FF000000</item>
         <item name="hourHandColor">#E80909</item>

@@ -235,7 +235,7 @@ class ClockView(
         const val HAND_CORNER = 90.0
 
         const val HOUR_HAND = Calendar.HOUR
-        const val MINUTE_HAND =  Calendar.MINUTE
+        const val MINUTE_HAND = Calendar.MINUTE
         const val SECOND_HAND = Calendar.SECOND
     }
 }

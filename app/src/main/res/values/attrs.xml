@@ -10,7 +10,7 @@
         <attr name="minuteHandLength" format="float" />
         <attr name="secondHandLength" format="float" />
     </declare-styleable>
-    
+
     <attr name="clockStyle" format="reference" />
 
 </resources>
