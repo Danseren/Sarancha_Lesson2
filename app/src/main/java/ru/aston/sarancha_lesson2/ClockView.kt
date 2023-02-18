@@ -8,6 +8,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
+import java.util.*
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.properties.Delegates
@@ -17,7 +18,7 @@ class ClockView(
     attributeSet: AttributeSet?,
     defStyleAttr: Int,
     defStyleRes: Int
-    ) : View (context, attributeSet, defStyleAttr, defStyleRes){
+) : View(context, attributeSet, defStyleAttr, defStyleRes) {
 
     private var clockColor by Delegates.notNull<Int>()
     private var hourHandColor by Delegates.notNull<Int>()
@@ -29,9 +30,20 @@ class ClockView(
     private lateinit var minuteHandPaint: Paint
     private lateinit var secondHandPaint: Paint
 
-    constructor(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int) : this (context, attributeSet, defStyleAttr, R.style.DefaultClockStyle)
-        constructor(context: Context, attributeSet: AttributeSet?) : this (context, attributeSet, R.attr.clockStyle)
-        constructor(context: Context) : this (context, null)
+    constructor(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int) : this(
+        context,
+        attributeSet,
+        defStyleAttr,
+        R.style.DefaultClockStyle
+    )
+
+    constructor(context: Context, attributeSet: AttributeSet?) : this(
+        context,
+        attributeSet,
+        R.attr.clockStyle
+    )
+
+    constructor(context: Context) : this(context, null)
 
     init {
         if (attributeSet != null) {
@@ -42,14 +54,21 @@ class ClockView(
         initPaints()
     }
 
-    private fun initAttributes (attributeSet: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) {
-        val typedArray: TypedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ClockView, defStyleAttr, defStyleRes)
+    private fun initAttributes(attributeSet: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) {
+        val typedArray: TypedArray = context.obtainStyledAttributes(
+            attributeSet,
+            R.styleable.ClockView,
+            defStyleAttr,
+            defStyleRes
+        )
+
         clockColor = typedArray.getColor(R.styleable.ClockView_clockColor, CLOCK_DEFAULT_COLOR)
-        hourHandColor = typedArray.getColor(R.styleable.ClockView_hourHandColor, HOUR_HAND_DEFAULT_COLOR)
-        minuteHandColor = typedArray.getColor(R.styleable.ClockView_minuteHandColor, MINUTE_HAND_DEFAULT_COLOR)
-        secondHandColor = typedArray.getColor(R.styleable.ClockView_secondHandColor, SECOND_HAND_DEFAULT_COLOR)
-
-
+        hourHandColor =
+            typedArray.getColor(R.styleable.ClockView_hourHandColor, HOUR_HAND_DEFAULT_COLOR)
+        minuteHandColor =
+            typedArray.getColor(R.styleable.ClockView_minuteHandColor, MINUTE_HAND_DEFAULT_COLOR)
+        secondHandColor =
+            typedArray.getColor(R.styleable.ClockView_secondHandColor, SECOND_HAND_DEFAULT_COLOR)
         typedArray.recycle()
     }
 
@@ -65,72 +84,101 @@ class ClockView(
         clockPaint.apply {
             color = clockColor
             style = Paint.Style.STROKE
-            strokeWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5f, resources.displayMetrics)
+            strokeWidth =
+                TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 6f, resources.displayMetrics)
         }
 
         hourHandPaint = Paint(Paint.ANTI_ALIAS_FLAG)
         hourHandPaint.apply {
             color = hourHandColor
             style = Paint.Style.STROKE
-            strokeWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 3f, resources.displayMetrics)
+            strokeWidth =
+                TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 6f, resources.displayMetrics)
         }
 
         minuteHandPaint = Paint(Paint.ANTI_ALIAS_FLAG)
         minuteHandPaint.apply {
             color = minuteHandColor
             style = Paint.Style.STROKE
-            strokeWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4f, resources.displayMetrics)
+            strokeWidth =
+                TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4f, resources.displayMetrics)
         }
 
         secondHandPaint = Paint(Paint.ANTI_ALIAS_FLAG)
         secondHandPaint.apply {
             color = secondHandColor
             style = Paint.Style.STROKE
-            strokeWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5f, resources.displayMetrics)
+            strokeWidth =
+                TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2f, resources.displayMetrics)
         }
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+
+        drawClock(canvas)
+        drawHands(canvas)
+        postInvalidateDelayed(500)
+        invalidate()
+    }
+
+    private fun drawClock(canvas: Canvas) {
         val centerWidth = (width / 2).toFloat()
         val centerHeight = (height / 2).toFloat()
-
-        val hourStartWidth = (width / 2 - 25).toFloat()
-        val hourStartHeight = (height / 2).toFloat()
-        val hourEndWidth = (width / 2 + 75).toFloat()
-        val hourEndHeight = (height / 2).toFloat()
-
-        val minuteStartWidth = (width / 2 - 25).toFloat()
-        val minuteStartHeight = (height / 2 + 25).toFloat()
-        val minuteEndWidth = (width / 2 + 100).toFloat()
-        val minuteEndHeight = (height / 2 - 100).toFloat()
-
-        val secondStartWidth = (width / 2).toFloat()
-        val secondStartHeight = (height / 2 + 50).toFloat()
-        val secondEndWidth = (width / 2).toFloat()
-        val secondEndHeight = (height / 2 - 200).toFloat()
 
         canvas.drawCircle(centerWidth, centerHeight, 300f, clockPaint)
 
         for (i in 0..360 step 30) {
-            canvas.drawLine(getXCoordinateOnCircle(300f, i.toDouble()), getYCoordinateOnCircle(300f, i.toDouble()), getXCoordinateOnCircle(270f, i.toDouble()), getYCoordinateOnCircle(270f, i.toDouble())  , clockPaint)
+            canvas.drawLine(
+                getXCoordinateOnCircle(300f, i.toDouble()),
+                getYCoordinateOnCircle(300f, i.toDouble()),
+                getXCoordinateOnCircle(270f, i.toDouble()),
+                getYCoordinateOnCircle(270f, i.toDouble()),
+                clockPaint
+            )
         }
-        canvas.drawLine(centerWidth, centerHeight, hourStartWidth, hourStartHeight, hourHandPaint)
-        canvas.drawLine(centerWidth, centerHeight, hourEndWidth, hourEndHeight, hourHandPaint)
-
-        canvas.drawLine(centerWidth, centerHeight, minuteStartWidth, minuteStartHeight, minuteHandPaint)
-        canvas.drawLine(centerWidth, centerHeight, minuteEndWidth, minuteEndHeight, minuteHandPaint)
-
-        canvas.drawLine(centerWidth, centerHeight, secondStartWidth, secondStartHeight, secondHandPaint)
-        canvas.drawLine(centerWidth, centerHeight, secondEndWidth, secondEndHeight, secondHandPaint)
     }
 
-    private fun getXCoordinateOnCircle(radius: Float, corner: Double) : Float {
+    private fun drawHands(canvas: Canvas) {
+        drawHand(canvas, Calendar.HOUR, hourHandPaint)
+        drawHand(canvas, Calendar.MINUTE, minuteHandPaint)
+        drawHand(canvas, Calendar.SECOND, secondHandPaint)
+    }
+
+    private fun drawHand(canvas: Canvas, handType: Int, paintTape: Paint) {
+        val calendar = Calendar.getInstance()
+        var corner = 90.0
+
+        var handLength = 100f
+        when (handType) {
+            Calendar.HOUR -> {
+                handLength = 100f
+                corner = 90.0 + calendar[handType] * 30
+            }
+            Calendar.MINUTE -> {
+                handLength = 150f
+                corner = 90.0 + calendar[handType] * 6
+            }
+            else -> {
+                handLength = 200f
+                corner = 90.0 + calendar[handType] * 6
+            }
+        }
+        canvas.drawLine(
+            getXCoordinateOnCircle(30f, corner),
+            getYCoordinateOnCircle(30f, corner),
+            getXCoordinateOnCircle(handLength, corner + 180.0),
+            getYCoordinateOnCircle(handLength, corner + 180.0),
+            paintTape
+        )
+    }
+
+    private fun getXCoordinateOnCircle(radius: Float, corner: Double): Float {
         val x = (width / 2) + radius * cos(Math.toRadians(corner))
         return x.toFloat()
     }
 
-    private fun getYCoordinateOnCircle(radius: Float, corner: Double) : Float {
+    private fun getYCoordinateOnCircle(radius: Float, corner: Double): Float {
         val y = (height / 2) + radius * sin(Math.toRadians(corner))
         return y.toFloat()
     }
@@ -140,5 +188,8 @@ class ClockView(
         const val HOUR_HAND_DEFAULT_COLOR = Color.BLACK
         const val MINUTE_HAND_DEFAULT_COLOR = Color.BLACK
         const val SECOND_HAND_DEFAULT_COLOR = Color.BLACK
+        const val HOUR_HAND = "HOUR_HAND"
+        const val MINUTE_HAND = "MINUTE_HAND"
+        const val SECOND_HAND = "SECOND_HAND"
     }
 }
