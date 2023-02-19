@@ -3,6 +3,14 @@
     <dimen name="marginSmall">4dp</dimen>
     <dimen name="marginMedium">8dp</dimen>
     <dimen name="marginLarge">16dp</dimen>
+
     <dimen name="paddingLarge">16dp</dimen>
+    <dimen name="paddingMedium">8dp</dimen>
+
     <dimen name="chipSpacingHorizontal">4dp</dimen>
+
+    <dimen name="cardCornerRadius">8dp</dimen>
+    <dimen name="cardElevation">8dp</dimen>
+
+    <dimen name="infoViewHeight">140dp</dimen>
 </resources>

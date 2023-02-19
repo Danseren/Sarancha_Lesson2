@@ -14,4 +14,8 @@
     <string name="btnContacts">Contacts</string>
     <string name="btnVacancies">Vacancy</string>
     <string name="btnGallery">Gallery</string>
+    <string name="infoViewHeaderText">Android trainee</string>
+    <string name="infoViewBodyText">Стажировка по направлению Android</string>
+    <string name="changesViewBodyText">Changes body text</string>
+    <string name="changesHeaderText">Changes header text</string>
 </resources>

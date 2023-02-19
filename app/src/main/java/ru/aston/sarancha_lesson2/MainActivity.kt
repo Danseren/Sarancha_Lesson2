@@ -20,15 +20,17 @@ class MainActivity : AppCompatActivity() {
             btnContacts.setOnClickListener {
                 progressStart()
             }
+
             btnGallery.setOnClickListener {
                 progressStart()
             }
+
             btnVacancies.setOnClickListener {
                 progressStart()
                 infoView?.apply {
                     setImageSrc(getDrawable(resources, R.drawable.logo_land, null))
-                    setBodyText("body text")
-                    setHeaderText("header text")
+                    setBodyText(getString(R.string.changesViewBodyText))
+                    setHeaderText(getString(R.string.changesHeaderText))
                 }
             }
         }
