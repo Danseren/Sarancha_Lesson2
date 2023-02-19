@@ -1,9 +1,11 @@
 package ru.aston.sarancha_lesson2
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.res.ResourcesCompat
 import ru.aston.sarancha_lesson2.databinding.PartInfoBinding
 
 class InfoView(
@@ -15,7 +17,13 @@ class InfoView(
 
     private val binding: PartInfoBinding
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : this(context, attrs, defStyleAttr, 0)
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : this(
+        context,
+        attrs,
+        defStyleAttr,
+        0
+    )
+
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context) : this(context, null)
 
@@ -26,21 +34,35 @@ class InfoView(
         initializeAttributes(attrs, defStyleAttr, defStyleRes)
     }
 
-    private fun initializeAttributes (attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) {
+    private fun initializeAttributes(attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) {
         if (attrs == null) return
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.InfoView, defStyleAttr, defStyleRes)
+        val typedArray =
+            context.obtainStyledAttributes(attrs, R.styleable.InfoView, defStyleAttr, defStyleRes)
 
-        with(binding) {
-            val imageSrc = typedArray.getDrawable(R.styleable.InfoView_imageSrc)
-            ivLogo.setImageDrawable(imageSrc)
+        val imageSrc = typedArray.getDrawable(R.styleable.InfoView_imageSrc)
+        setImageSrc(imageSrc)
 
-            val headerText = typedArray.getText(R.styleable.InfoView_headerText)
-            tvLogoHeader.text = headerText ?: context.getString(R.string.tvLogoHeader)
+        val headerText = typedArray.getString(R.styleable.InfoView_headerText)
+        setHeaderText(headerText)
 
-            val bodyText = typedArray.getText(R.styleable.InfoView_bodyText)
-            tvLogoText.text = bodyText ?: context.getString(R.string.tvLogoText)
-        }
-
+        val bodyText = typedArray.getString(R.styleable.InfoView_bodyText)
+        setBodyText(bodyText)
         typedArray.recycle()
+    }
+
+    fun setHeaderText(headerText: String?) {
+        binding.tvLogoHeader.text = headerText ?: context.getString(R.string.tvLogoHeader)
+    }
+
+    fun setBodyText(bodyText: String?) {
+        binding.tvLogoText.text = bodyText ?: context.getString(R.string.tvLogoText)
+    }
+
+    fun setImageSrc(imageSrc: Drawable?) {
+        binding.ivLogo.setImageDrawable(imageSrc ?: ResourcesCompat.getDrawable(
+            resources,
+            R.drawable.logo,
+            null
+        ))
     }
 }

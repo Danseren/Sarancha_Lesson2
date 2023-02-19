@@ -2,6 +2,7 @@ package ru.aston.sarancha_lesson2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.res.ResourcesCompat
 import ru.aston.sarancha_lesson2.Utils.makeGone
 import ru.aston.sarancha_lesson2.Utils.makeVisible
 import ru.aston.sarancha_lesson2.databinding.ActivityMainBinding
@@ -24,6 +25,11 @@ class MainActivity : AppCompatActivity() {
             }
             btnVacancies.setOnClickListener {
                 progressStart()
+                infoView?.apply {
+                    setImageSrc(ResourcesCompat.getDrawable(resources, R.drawable.logo_land, null))
+                    setBodyText("body text")
+                    setHeaderText("header text")
+                }
             }
         }
     }
