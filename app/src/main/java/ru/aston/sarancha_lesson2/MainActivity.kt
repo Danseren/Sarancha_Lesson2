@@ -25,12 +25,6 @@ class MainActivity : AppCompatActivity() {
             btnVacancies.setOnClickListener {
                 progressStart()
             }
-            ivLogo.setOnClickListener {
-                tvOffice.makeVisible()
-                chipGroup.makeVisible()
-                flow.makeVisible()
-                progressCircular.makeGone()
-            }
         }
     }
 
