@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.res.ResourcesCompat
+import androidx.core.content.res.ResourcesCompat.*
 import ru.aston.sarancha_lesson2.databinding.PartInfoBinding
 
 class InfoView(
@@ -59,10 +59,12 @@ class InfoView(
     }
 
     fun setImageSrc(imageSrc: Drawable?) {
-        binding.ivLogo.setImageDrawable(imageSrc ?: ResourcesCompat.getDrawable(
-            resources,
-            R.drawable.logo,
-            null
-        ))
+        binding.ivLogo.setImageDrawable(
+            imageSrc ?: getDrawable(
+                resources,
+                R.drawable.logo,
+                null
+            )
+        )
     }
 }
