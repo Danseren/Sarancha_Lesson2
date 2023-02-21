@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/itemMain"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_48"
+        android:title="@string/textLabelMain"/>
+    <item
+        android:id="@+id/itemVacancies"
+        android:enabled="true"
+        android:icon="@drawable/ic_vacancies_48"
+        android:title="@string/textLabelVacancies"/>
+    <item
+        android:id="@+id/itemOffices"
+        android:enabled="true"
+        android:icon="@drawable/ic_offices_48"
+        android:title="@string/textLabelOffices"/>
+</menu>
