@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.aston.sarancha_lesson2.contract.navigator
 import ru.aston.sarancha_lesson2.databinding.FragmentAuthorizationBinding
 
 class AuthorizationFragment : Fragment() {
@@ -30,9 +31,7 @@ class AuthorizationFragment : Fragment() {
 
         with(binding) {
             btnEntrance.setOnClickListener {
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
-                    .commit()
+                navigator().showMainScreen()
             }
         }
     }

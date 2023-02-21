@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.aston.sarancha_lesson2.contract.HasCustomTitle
 import ru.aston.sarancha_lesson2.databinding.FragmentVacanciesBinding
 
-class VacanciesFragment : Fragment() {
+class VacanciesFragment : Fragment(), HasCustomTitle {
 
     private var _binding: FragmentVacanciesBinding? = null
     private val binding get() = _binding!!
@@ -32,6 +33,8 @@ class VacanciesFragment : Fragment() {
 
         }
     }
+
+    override fun getTitleRes(): Int = R.string.titleVacancies
 
     override fun onDestroyView() {
         super.onDestroyView()

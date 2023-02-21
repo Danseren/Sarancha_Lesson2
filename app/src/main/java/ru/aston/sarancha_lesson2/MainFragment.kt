@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.aston.sarancha_lesson2.contract.HasCustomTitle
+import ru.aston.sarancha_lesson2.contract.navigator
 import ru.aston.sarancha_lesson2.databinding.FragmentMainBinding
 
-class MainFragment : Fragment() {
+class MainFragment : Fragment(), HasCustomTitle {
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
@@ -33,21 +35,15 @@ class MainFragment : Fragment() {
                 setOnItemSelectedListener { item ->
                     when (item.itemId) {
                         R.id.itemMain -> {
-                            childFragmentManager.beginTransaction()
-                                .replace(R.id.fragmentContainer, AboutFragment.newInstance())
-                                .commit()
+                            navigator().showAboutScreen()
                             true
                         }
                         R.id.itemVacancies -> {
-                            childFragmentManager.beginTransaction()
-                                .replace(R.id.fragmentContainer, VacanciesFragment.newInstance())
-                                .commit()
+                            navigator().showVacanciesScreen()
                             true
                         }
                         R.id.itemOffices -> {
-                            childFragmentManager.beginTransaction()
-                                .replace(R.id.fragmentContainer, OfficesFragment.newInstance())
-                                .commit()
+                            navigator().showOfficesScreen()
                             true
                         }
                         else -> {
@@ -57,6 +53,16 @@ class MainFragment : Fragment() {
                 }
                 selectedItemId = R.id.itemMain
             }
+        }
+    }
+
+
+    override fun getTitleRes(): Int {
+
+        return when (binding.bottomNavigation.selectedItemId) {
+            R.id.itemMain -> R.string.titleAbout
+            R.id.itemOffices -> R.string.titleOffices
+            else -> R.string.titleVacancies
         }
     }
 
