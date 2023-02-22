@@ -11,4 +11,9 @@
     <string name="titleAbout">О нас</string>
     <string name="titleVacancies">Вакансии</string>
     <string name="titleOffices">Офисы</string>
+    <string name="wrongPasswordMessage">Неверный пароль</string>
+    <string name="tvEntrance">Вход</string>
+    <string name="hintLayoutLogin">Login</string>
+    <string name="hintLayoutPassword">Password</string>
+    <string name="btnEntrance">Войти</string>
 </resources>

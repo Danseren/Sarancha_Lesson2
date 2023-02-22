@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.aston.sarancha_lesson2.Utils.navigator
 import ru.aston.sarancha_lesson2.contract.HasCustomTitle
-import ru.aston.sarancha_lesson2.contract.navigator
 import ru.aston.sarancha_lesson2.databinding.FragmentMainBinding
 
 class MainFragment : Fragment(), HasCustomTitle {
@@ -31,6 +31,7 @@ class MainFragment : Fragment(), HasCustomTitle {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
+
             bottomNavigation.apply {
                 setOnItemSelectedListener { item ->
                     when (item.itemId) {
