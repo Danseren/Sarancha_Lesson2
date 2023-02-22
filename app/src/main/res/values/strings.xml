@@ -18,10 +18,19 @@
     <string name="hintLayoutLogin">Login</string>
     <string name="hintLayoutPassword">Password</string>
     <string name="btnEntrance">Войти</string>
-    <string name="vvFirstHeader">Начальник</string>
-    <string name="vvFirstBody">Руководить небольшим коллективом</string>
-    <string name="vvSecondHeader">Менеджер</string>
-    <string name="vvSecondBody">Организовывать работу</string>
-    <string name="vvThirdHeader">Разработчик</string>
-    <string name="vvThirdBody">Разрабатывать продукт</string>
+    <string name="cvFirstHeader">Начальник</string>
+    <string name="cvFirstBody">Руководить небольшим коллективом</string>
+    <string name="cvSecondHeader">Менеджер</string>
+    <string name="cvSecondBody">Организовывать работу</string>
+    <string name="cvThirdHeader">Разработчик</string>
+    <string name="cvThirdBody">Разрабатывать продукт</string>
+    <string name="cvOfficeFirstHeader">Россия</string>
+    <string name="cvOfficeFirstBody">Москва</string>
+    <string name="cvOfficeSecondHeader">Беларусь</string>
+    <string name="cvOfficeSecondBody">Минск</string>
+    <string name="cvOfficeThirdHeader">Казахстан</string>
+    <string name="cvOfficeThirdBody">Алматы</string>
+    <string name="addressFirstOffice">БЦ «Башня Империя», 3 подъезд, 53 этаж, офис 13</string>
+    <string name="addressSecondOffice">пр-т Победителей, 7А</string>
+    <string name="addressThirdOffice">Бостандыкский район, микрорайон Коктем-2, здание 22</string>
 </resources>

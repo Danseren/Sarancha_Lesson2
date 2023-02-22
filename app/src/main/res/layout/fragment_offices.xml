@@ -1,31 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">>
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Office 1"
+    <ru.aston.sarancha_lesson2.CustomView
+        android:id="@+id/officeFirst"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/vacancyHeight"
+        android:layout_marginStart="@dimen/marginMedium"
+        android:layout_marginTop="@dimen/marginMedium"
+        android:layout_marginEnd="@dimen/marginMedium"
+        app:bodyText="@string/cvOfficeFirstBody"
+        app:headerText="@string/cvOfficeFirstHeader"
+        app:imageSrc="@drawable/office_building_64"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Office 2"
+    <ru.aston.sarancha_lesson2.CustomView
+        android:id="@+id/officeSecond"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/vacancyHeight"
+        android:layout_marginStart="@dimen/marginMedium"
+        android:layout_marginEnd="@dimen/marginMedium"
+        app:bodyText="@string/cvOfficeSecondBody"
+        app:headerText="@string/cvOfficeSecondHeader"
+        app:imageSrc="@drawable/office_building_64"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+        app:layout_constraintTop_toBottomOf="@+id/officeFirst" />
 
-    <TextView
-        android:id="@+id/tv3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Office 3"
+    <ru.aston.sarancha_lesson2.CustomView
+        android:id="@+id/officeThird"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/vacancyHeight"
+        android:layout_marginStart="@dimen/marginMedium"
+        android:layout_marginEnd="@dimen/marginMedium"
+        app:bodyText="@string/cvOfficeThirdBody"
+        app:headerText="@string/cvOfficeThirdHeader"
+        app:imageSrc="@drawable/office_building_64"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv2" />
+        app:layout_constraintTop_toBottomOf="@+id/officeSecond" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

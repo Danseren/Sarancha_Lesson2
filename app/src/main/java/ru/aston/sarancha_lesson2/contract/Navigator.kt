@@ -1,24 +1,20 @@
 package ru.aston.sarancha_lesson2.contract
 
-import androidx.fragment.app.Fragment
-
-typealias ResultListener<T> = (T) -> Unit
+import ru.aston.sarancha_lesson2.OfficeAddress
 
 interface Navigator {
 
-    fun showAboutScreen() {}
+    fun showAboutScreen()
 
-    fun showAuthorizationScreen() {}
+    fun showAuthorizationScreen()
 
-    fun showMainScreen() {}
+    fun showMainScreen()
 
-    fun showOfficeInfoScreen() {}
+    fun showOfficeInfoScreen(officeAddress: OfficeAddress)
 
-    fun showOfficesScreen() {}
+    fun showOfficesScreen()
 
-    fun showVacanciesScreen() {}
+    fun showVacanciesScreen()
 
-    fun goBack() {}
-
-    fun goToMenu() {}
+    fun goBack()
 }

@@ -5,16 +5,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.aston.sarancha_lesson2.Utils.navigator
+import ru.aston.sarancha_lesson2.contract.HasCustomTitle
 import ru.aston.sarancha_lesson2.databinding.FragmentOfficeInfoBinding
 
-class OfficeInfoFragment : Fragment() {
+class OfficeInfoFragment : Fragment(), HasCustomTitle {
 
     private var _binding: FragmentOfficeInfoBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var officeAddress: OfficeAddress
+
 
     companion object {
-        fun newInstance() = OfficeInfoFragment()
+        //        fun newInstance() = OfficeInfoFragment()
+        fun newInstance(officeAddress: OfficeAddress): OfficeInfoFragment {
+            val args = Bundle()
+            args.putParcelable("ARG_OPTIONS", officeAddress)
+            val fragment = OfficeInfoFragment()
+            fragment.arguments = args
+            return fragment
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        officeAddress = arguments?.getParcelable("ARG_OPTIONS")!!
     }
 
     override fun onCreateView(
@@ -29,9 +45,22 @@ class OfficeInfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
-
+            tvCountry.text = officeAddress.country
+            tvCity.text = officeAddress.city
+            tvAddress.text = officeAddress.address
         }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable("ARG_OPTIONS", officeAddress)
+    }
+
+    private fun onBackPressed() {
+        navigator().goBack()
+    }
+
+    override fun getTitleRes(): Int = R.string.titleOffices
 
     override fun onDestroyView() {
         super.onDestroyView()

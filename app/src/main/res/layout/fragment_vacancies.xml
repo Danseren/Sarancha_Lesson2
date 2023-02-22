@@ -11,9 +11,8 @@
         android:layout_marginStart="@dimen/marginMedium"
         android:layout_marginTop="@dimen/marginMedium"
         android:layout_marginEnd="@dimen/marginMedium"
-        app:bodyText="@string/vvFirstBody"
-        app:headerText="@string/vvFirstHeader"
-        app:imageSrc="@drawable/worker_64"
+        app:bodyText="@string/cvFirstBody"
+        app:headerText="@string/cvFirstHeader"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,8 +23,8 @@
         android:layout_height="@dimen/vacancyHeight"
         android:layout_marginStart="@dimen/marginMedium"
         android:layout_marginEnd="@dimen/marginMedium"
-        app:bodyText="@string/vvSecondBody"
-        app:headerText="@string/vvSecondHeader"
+        app:bodyText="@string/cvSecondBody"
+        app:headerText="@string/cvSecondHeader"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vacancyFirst" />
@@ -36,8 +35,8 @@
         android:layout_height="@dimen/vacancyHeight"
         android:layout_marginStart="@dimen/marginMedium"
         android:layout_marginEnd="@dimen/marginMedium"
-        app:bodyText="@string/vvThirdBody"
-        app:headerText="@string/vvThirdHeader"
+        app:bodyText="@string/cvThirdBody"
+        app:headerText="@string/cvThirdHeader"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vacancySecond" />

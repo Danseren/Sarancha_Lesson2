@@ -38,13 +38,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.3" />
+                app:layout_constraintGuide_percent="0.2" />
 
             <TextView
                 android:id="@+id/tvLogoHeader"
                 style="@style/TitleTextStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginExtraLarge"
                 android:layout_marginTop="@dimen/marginMedium"
                 android:contentDescription="@string/contentDescription"
                 android:text="@string/tvVacancyHeader"
@@ -57,6 +58,7 @@
                 style="@style/SmallTextStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginExtraLarge"
                 android:contentDescription="@string/contentDescription"
                 android:text="@string/tvVacancyText"
                 app:layout_constraintEnd_toEndOf="parent"

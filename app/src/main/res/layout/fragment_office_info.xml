@@ -1,22 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv1"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NAME"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
 
     <TextView
-        android:id="@+id/tv2"
+        android:id="@+id/tvCountry"
+        style="@style/TitleTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location"
+        android:layout_marginTop="@dimen/marginExtraLarge"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Country" />
+
+    <TextView
+        android:id="@+id/tvCity"
+        style="@style/MediumTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginLarge"
+        android:layout_marginEnd="@dimen/marginMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVerticalStart"
+        app:layout_constraintTop_toBottomOf="@+id/tvCountry"
+        tools:text="City" />
+
+    <TextView
+        android:id="@+id/tvAddress"
+        style="@style/SmallTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginMedium"
+        android:layout_marginEnd="@dimen/marginMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVerticalStart"
+        app:layout_constraintTop_toBottomOf="@+id/tvCity"
+        tools:text="Address" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

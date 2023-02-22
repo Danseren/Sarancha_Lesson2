@@ -65,7 +65,8 @@ class AuthorizationFragment : Fragment() {
                     when (etPassword.text.toString()) {
                         CORRECT_PASSWORD -> TextInputLayoutPassword.error = null
                         EMPTY_PASSWORD -> TextInputLayoutPassword.error = null
-                        else -> TextInputLayoutPassword.error = getString(R.string.wrongPasswordMessage)
+                        else -> TextInputLayoutPassword.error =
+                            getString(R.string.wrongPasswordMessage)
                     }
 
                 }

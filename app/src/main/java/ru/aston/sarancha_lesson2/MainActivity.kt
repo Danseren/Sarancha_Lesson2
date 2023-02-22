@@ -54,8 +54,11 @@ class MainActivity : AppCompatActivity(), Navigator {
         launchParentFragment(MainFragment.newInstance(), R.id.container)
     }
 
-    override fun showOfficeInfoScreen() {
-        launchParentFragment(OfficeInfoFragment.newInstance(), R.id.fragmentContainer)
+    override fun showOfficeInfoScreen(officeAddress: OfficeAddress) {
+        launchParentFragmentWithAddToBackStack(
+            OfficeInfoFragment.newInstance(officeAddress),
+            R.id.fragmentContainer
+        )
     }
 
     override fun showOfficesScreen() {
@@ -66,19 +69,23 @@ class MainActivity : AppCompatActivity(), Navigator {
         launchParentFragment(VacanciesFragment.newInstance(), R.id.fragmentContainer)
     }
 
-    override fun goBack() {
-        super.goBack()
-    }
-
-    override fun goToMenu() {
-        super.goToMenu()
-    }
-
     private fun launchParentFragment(fragment: Fragment, container: Int) {
         supportFragmentManager
             .beginTransaction()
             .replace(container, fragment)
             .commit()
+    }
+
+    private fun launchParentFragmentWithAddToBackStack(fragment: Fragment, container: Int) {
+        supportFragmentManager
+            .beginTransaction()
+            .addToBackStack(null)
+            .replace(container, fragment)
+            .commit()
+    }
+
+    override fun goBack() {
+        onBackPressed()
     }
 
     private fun updateUI() {
@@ -88,6 +95,14 @@ class MainActivity : AppCompatActivity(), Navigator {
             binding.toolbar.title = getString(fragment.getTitleRes())
         } else {
             binding.toolbar.title = getString(R.string.app_name)
+        }
+
+        if (supportFragmentManager.backStackEntryCount > 0) {
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            supportActionBar?.setDisplayShowHomeEnabled(true)
+        } else {
+            supportActionBar?.setDisplayHomeAsUpEnabled(false)
+            supportActionBar?.setDisplayShowHomeEnabled(false)
         }
     }
 

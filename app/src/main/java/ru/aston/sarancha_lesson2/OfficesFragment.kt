@@ -14,7 +14,6 @@ class OfficesFragment : Fragment(), HasCustomTitle {
     private var _binding: FragmentOfficesBinding? = null
     private val binding get() = _binding!!
 
-
     companion object {
         fun newInstance() = OfficesFragment()
     }
@@ -30,10 +29,34 @@ class OfficesFragment : Fragment(), HasCustomTitle {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val dataOfficeAddress = arrayListOf(
+            OfficeAddress(
+                getString(R.string.cvOfficeFirstHeader),
+                getString(R.string.cvOfficeFirstBody),
+                getString(R.string.addressFirstOffice)
+            ),
+            OfficeAddress(
+                getString(R.string.cvOfficeSecondHeader),
+                getString(R.string.cvOfficeSecondBody),
+                getString(R.string.addressSecondOffice)
+            ),
+            OfficeAddress(
+                getString(R.string.cvOfficeThirdHeader),
+                getString(R.string.cvOfficeThirdBody),
+                getString(R.string.addressThirdOffice)
+            )
+        )
+
         with(binding) {
 
-            tv1.setOnClickListener {
-                navigator().showOfficeInfoScreen()
+            officeFirst.setOnClickListener {
+                navigator().showOfficeInfoScreen(dataOfficeAddress[0])
+            }
+            officeSecond.setOnClickListener {
+                navigator().showOfficeInfoScreen(dataOfficeAddress[1])
+            }
+            officeThird.setOnClickListener {
+                navigator().showOfficeInfoScreen(dataOfficeAddress[2])
             }
         }
     }
