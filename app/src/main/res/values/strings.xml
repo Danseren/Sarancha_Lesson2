@@ -3,6 +3,8 @@
     <string name="contentDescription">content description</string>
     <string name="tvLogoHeader">ИТ-решения для развития бизнеса</string>
     <string name="tvLogoText">Разработка программного обеспечения</string>
+    <string name="tvVacancyText">Проектировка и реализация</string>
+    <string name="tvVacancyHeader">Работник</string>
     <string name="tvAboutHeader">О нас:</string>
     <string name="tvAbout">Aston – компания по разработке ПО с полным циклом услуг. Уже 15 лет мы помогаем заказчикам по всему миру трансформировать бизнес, создавая эффективные мобильные и десктопные решения.</string>
     <string name="textLabelMain">Главная</string>
@@ -16,4 +18,10 @@
     <string name="hintLayoutLogin">Login</string>
     <string name="hintLayoutPassword">Password</string>
     <string name="btnEntrance">Войти</string>
+    <string name="vvFirstHeader">Начальник</string>
+    <string name="vvFirstBody">Руководить небольшим коллективом</string>
+    <string name="vvSecondHeader">Менеджер</string>
+    <string name="vvSecondBody">Организовывать работу</string>
+    <string name="vvThirdHeader">Разработчик</string>
+    <string name="vvThirdBody">Разрабатывать продукт</string>
 </resources>
