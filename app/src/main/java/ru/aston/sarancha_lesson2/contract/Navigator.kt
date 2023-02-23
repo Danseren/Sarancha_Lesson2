@@ -15,6 +15,4 @@ interface Navigator {
     fun showOfficesScreen()
 
     fun showVacanciesScreen()
-
-    fun goBack()
 }

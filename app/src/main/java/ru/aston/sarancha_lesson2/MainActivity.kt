@@ -84,8 +84,9 @@ class MainActivity : AppCompatActivity(), Navigator {
             .commit()
     }
 
-    override fun goBack() {
+    override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
+        return true
     }
 
     private fun updateUI() {

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.aston.sarancha_lesson2.Utils.navigator
 import ru.aston.sarancha_lesson2.contract.HasCustomTitle
 import ru.aston.sarancha_lesson2.databinding.FragmentOfficeInfoBinding
 
@@ -54,10 +53,6 @@ class OfficeInfoFragment : Fragment(), HasCustomTitle {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putParcelable("ARG_OPTIONS", officeAddress)
-    }
-
-    private fun onBackPressed() {
-        navigator().goBack()
     }
 
     override fun getTitleRes(): Int = R.string.titleOffices
