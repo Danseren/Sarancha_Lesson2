@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ru.aston.sarancha_lesson2.CustomView
+    <ru.aston.sarancha_lesson2.view.CustomView
         android:id="@+id/officeFirst"
         android:layout_width="0dp"
         android:layout_height="@dimen/vacancyHeight"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.aston.sarancha_lesson2.CustomView
+    <ru.aston.sarancha_lesson2.view.CustomView
         android:id="@+id/officeSecond"
         android:layout_width="0dp"
         android:layout_height="@dimen/vacancyHeight"
@@ -31,7 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/officeFirst" />
 
-    <ru.aston.sarancha_lesson2.CustomView
+    <ru.aston.sarancha_lesson2.view.CustomView
         android:id="@+id/officeThird"
         android:layout_width="0dp"
         android:layout_height="@dimen/vacancyHeight"

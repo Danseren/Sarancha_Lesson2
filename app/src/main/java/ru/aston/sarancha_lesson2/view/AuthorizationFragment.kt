@@ -1,4 +1,4 @@
-package ru.aston.sarancha_lesson2
+package ru.aston.sarancha_lesson2.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.aston.sarancha_lesson2.R
 import ru.aston.sarancha_lesson2.Utils.CORRECT_PASSWORD
 import ru.aston.sarancha_lesson2.Utils.EMPTY_PASSWORD
 import ru.aston.sarancha_lesson2.Utils.makeVisible

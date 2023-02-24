@@ -1,10 +1,11 @@
-package ru.aston.sarancha_lesson2
+package ru.aston.sarancha_lesson2.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import ru.aston.sarancha_lesson2.MainActivity
 import ru.aston.sarancha_lesson2.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {

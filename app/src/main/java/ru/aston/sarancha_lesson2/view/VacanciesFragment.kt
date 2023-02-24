@@ -1,28 +1,29 @@
-package ru.aston.sarancha_lesson2
+package ru.aston.sarancha_lesson2.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.aston.sarancha_lesson2.R
 import ru.aston.sarancha_lesson2.contract.HasCustomTitle
-import ru.aston.sarancha_lesson2.databinding.FragmentAboutBinding
+import ru.aston.sarancha_lesson2.databinding.FragmentVacanciesBinding
 
-class AboutFragment : Fragment(), HasCustomTitle {
+class VacanciesFragment : Fragment(), HasCustomTitle {
 
-    private var _binding: FragmentAboutBinding? = null
+    private var _binding: FragmentVacanciesBinding? = null
     private val binding get() = _binding!!
 
 
     companion object {
-        fun newInstance() = AboutFragment()
+        fun newInstance() = VacanciesFragment()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAboutBinding.inflate(inflater)
+        _binding = FragmentVacanciesBinding.inflate(inflater)
         return binding.root
     }
 
@@ -34,7 +35,7 @@ class AboutFragment : Fragment(), HasCustomTitle {
         }
     }
 
-    override fun getTitleRes(): Int = R.string.titleAbout
+    override fun getTitleRes(): Int = R.string.titleVacancies
 
     override fun onDestroyView() {
         super.onDestroyView()

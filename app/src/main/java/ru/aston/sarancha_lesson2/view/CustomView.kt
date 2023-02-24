@@ -1,4 +1,4 @@
-package ru.aston.sarancha_lesson2
+package ru.aston.sarancha_lesson2.view
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
+import ru.aston.sarancha_lesson2.R
 import ru.aston.sarancha_lesson2.databinding.PartInfoBinding
 
 class CustomView(
