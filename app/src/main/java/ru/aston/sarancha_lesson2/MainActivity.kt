@@ -3,8 +3,12 @@ package ru.aston.sarancha_lesson2
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isNotEmpty
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import kotlinx.android.synthetic.main.fragment_main.*
+import ru.aston.sarancha_lesson2.Utils.makeGone
+import ru.aston.sarancha_lesson2.Utils.makeVisible
 import ru.aston.sarancha_lesson2.contract.HasCustomTitle
 import ru.aston.sarancha_lesson2.contract.Navigator
 import ru.aston.sarancha_lesson2.databinding.ActivityMainBinding
@@ -101,9 +105,11 @@ class MainActivity : AppCompatActivity(), Navigator {
         if (supportFragmentManager.backStackEntryCount > 0) {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
             supportActionBar?.setDisplayShowHomeEnabled(true)
+            bottom_navigation.makeGone()
         } else {
             supportActionBar?.setDisplayHomeAsUpEnabled(false)
             supportActionBar?.setDisplayShowHomeEnabled(false)
+            if (bottom_navigation != null) bottom_navigation.makeVisible()
         }
     }
 
