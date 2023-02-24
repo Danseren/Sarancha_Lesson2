@@ -33,4 +33,21 @@
     <string name="addressFirstOffice">БЦ «Башня Империя», 3 подъезд, 53 этаж, офис 13</string>
     <string name="addressSecondOffice">пр-т Победителей, 7А</string>
     <string name="addressThirdOffice">Бостандыкский район, микрорайон Коктем-2, здание 22</string>
+    <string name="backend">Backend разработчик</string>
+    <string name="backendDescription">Разработка и сопровождение серверной части приложений</string>
+    <string name="frontend">Frontend-разработчик</string>
+    <string name="frontendDescription">Разработка и сопровождение фронт части приложений</string>
+    <string name="teamLead">Team Lead</string>
+    <string name="teamLeadDescription">Управление командой: растить зрелую команду, которая работает самостоятельно и использует хорошие практики</string>
+    <string name="director">Заместитель коммерческого директора</string>
+    <string name="directorDescription">Оперативный контроль работы руководителей коммерческих подразделений</string>
+    <string name="deputyDirector">Директор подразделения</string>
+    <string name="deputyDirectorDescription">Формирование команды подразделения. Организация и управление продажами</string>
+    <string name="cleaner">Уборщица/Уборщик офисного помещения</string>
+    <string name="cleanerDescription">Уборка офисных помещений</string>
+    <string name="guard">Охранник</string>
+    <string name="guardDescription">Контроль входа/выхода сотрудников. Открытие и закрытие офиса. Видеонаблюдение</string>
+    <string name="kotlin">Kotlin</string>
+    <string name="java">Java</string>
+    <string name="none">None</string>
 </resources>

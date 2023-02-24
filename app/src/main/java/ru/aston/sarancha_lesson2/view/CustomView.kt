@@ -1,11 +1,9 @@
 package ru.aston.sarancha_lesson2.view
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.res.ResourcesCompat
 import ru.aston.sarancha_lesson2.R
 import ru.aston.sarancha_lesson2.databinding.PartInfoBinding
 
@@ -40,7 +38,7 @@ class CustomView(
         val typedArray =
             context.obtainStyledAttributes(attrs, R.styleable.CustomView, defStyleAttr, defStyleRes)
 
-        val imageSrc = typedArray.getDrawable(R.styleable.CustomView_imageSrc)
+        val imageSrc = typedArray.getInteger(R.styleable.CustomView_imageSrc, R.drawable.worker_64)
         setImageSrc(imageSrc)
 
         val headerText = typedArray.getString(R.styleable.CustomView_headerText)
@@ -48,6 +46,7 @@ class CustomView(
 
         val bodyText = typedArray.getString(R.styleable.CustomView_bodyText)
         setBodyText(bodyText)
+
         typedArray.recycle()
     }
 
@@ -59,13 +58,7 @@ class CustomView(
         binding.tvLogoText.text = bodyText ?: context.getString(R.string.tvVacancyText)
     }
 
-    fun setImageSrc(imageSrc: Drawable?) {
-        binding.ivLogo.setImageDrawable(
-            imageSrc ?: ResourcesCompat.getDrawable(
-                resources,
-                R.drawable.worker_64,
-                null
-            )
-        )
+    fun setImageSrc(imageSrc: Int) {
+        binding.ivLogo.setImageResource(imageSrc)
     }
 }

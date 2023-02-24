@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/radius"
         app:cardElevation="@dimen/elevation"
@@ -17,6 +17,7 @@
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardConstraintLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="@dimen/paddingMedium">
@@ -29,12 +30,12 @@
                 android:contentDescription="@string/contentDescription"
                 android:src="@drawable/worker_64"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalStart"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guidelineVertical"
+                android:id="@+id/guidelineVerticalStart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -48,9 +49,11 @@
                 android:layout_marginStart="@dimen/marginExtraLarge"
                 android:layout_marginTop="@dimen/marginMedium"
                 android:contentDescription="@string/contentDescription"
+                android:ellipsize="end"
+                android:lines="1"
                 android:text="@string/tvVacancyHeader"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+                app:layout_constraintStart_toEndOf="@+id/guidelineVerticalStart"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -60,9 +63,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/marginExtraLarge"
                 android:contentDescription="@string/contentDescription"
+                android:ellipsize="end"
+                android:lines="1"
                 android:text="@string/tvVacancyText"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+                app:layout_constraintStart_toEndOf="@+id/guidelineVerticalStart"
                 app:layout_constraintTop_toBottomOf="@id/tvLogoHeader" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

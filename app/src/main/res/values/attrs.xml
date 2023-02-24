@@ -2,7 +2,7 @@
 <resources>
 
     <declare-styleable name="CustomView">
-        <attr name="imageSrc" format="reference" />
+        <attr name="imageSrc" format="integer" />
         <attr name="headerText" format="string" />
         <attr name="bodyText" format="string" />
     </declare-styleable>

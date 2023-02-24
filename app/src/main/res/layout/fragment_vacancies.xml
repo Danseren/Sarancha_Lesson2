@@ -1,44 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recyclerVacanciesContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ru.aston.sarancha_lesson2.view.CustomView
-        android:id="@+id/vacancyFirst"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/vacancyHeight"
-        android:layout_marginStart="@dimen/marginMedium"
-        android:layout_marginTop="@dimen/marginMedium"
-        android:layout_marginEnd="@dimen/marginMedium"
-        app:bodyText="@string/cvFirstBody"
-        app:headerText="@string/cvFirstHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ru.aston.sarancha_lesson2.view.CustomView
-        android:id="@+id/vacancySecond"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/vacancyHeight"
-        android:layout_marginStart="@dimen/marginMedium"
-        android:layout_marginEnd="@dimen/marginMedium"
-        app:bodyText="@string/cvSecondBody"
-        app:headerText="@string/cvSecondHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vacancyFirst" />
-
-    <ru.aston.sarancha_lesson2.view.CustomView
-        android:id="@+id/vacancyThird"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/vacancyHeight"
-        android:layout_marginStart="@dimen/marginMedium"
-        android:layout_marginEnd="@dimen/marginMedium"
-        app:bodyText="@string/cvThirdBody"
-        app:headerText="@string/cvThirdHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vacancySecond" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:layout_height="wrap_content"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:listitem="@layout/recycler_item" />

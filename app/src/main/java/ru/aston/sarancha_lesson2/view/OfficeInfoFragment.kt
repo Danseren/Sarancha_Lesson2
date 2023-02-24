@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.aston.sarancha_lesson2.OfficeAddress
 import ru.aston.sarancha_lesson2.R
+import ru.aston.sarancha_lesson2.Utils.ARG_OPTIONS
 import ru.aston.sarancha_lesson2.contract.HasCustomTitle
 import ru.aston.sarancha_lesson2.databinding.FragmentOfficeInfoBinding
 
@@ -19,10 +20,9 @@ class OfficeInfoFragment : Fragment(), HasCustomTitle {
 
 
     companion object {
-        //        fun newInstance() = OfficeInfoFragment()
         fun newInstance(officeAddress: OfficeAddress): OfficeInfoFragment {
             val args = Bundle()
-            args.putParcelable("ARG_OPTIONS", officeAddress)
+            args.putParcelable(ARG_OPTIONS, officeAddress)
             val fragment = OfficeInfoFragment()
             fragment.arguments = args
             return fragment
@@ -31,7 +31,7 @@ class OfficeInfoFragment : Fragment(), HasCustomTitle {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        officeAddress = arguments?.getParcelable("ARG_OPTIONS")!!
+        officeAddress = arguments?.getParcelable(ARG_OPTIONS)!!
     }
 
     override fun onCreateView(
@@ -54,7 +54,7 @@ class OfficeInfoFragment : Fragment(), HasCustomTitle {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putParcelable("ARG_OPTIONS", officeAddress)
+        outState.putParcelable(ARG_OPTIONS, officeAddress)
     }
 
     override fun getTitleRes(): Int = R.string.titleOffices
