@@ -18,7 +18,6 @@ class OfficeInfoFragment : Fragment(), HasCustomTitle {
 
     private lateinit var officeAddress: OfficeAddress
 
-
     companion object {
         fun newInstance(officeAddress: OfficeAddress): OfficeInfoFragment {
             val args = Bundle()
@@ -49,6 +48,7 @@ class OfficeInfoFragment : Fragment(), HasCustomTitle {
             tvCountry.text = officeAddress.bodyText
             tvCity.text = officeAddress.bodyText
             tvAddress.text = officeAddress.address
+            ivFlag.setImageResource(officeAddress.imageSrc)
         }
     }
 

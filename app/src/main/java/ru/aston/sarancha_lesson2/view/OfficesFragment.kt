@@ -10,7 +10,6 @@ import ru.aston.sarancha_lesson2.R
 import ru.aston.sarancha_lesson2.Utils.ABROAD
 import ru.aston.sarancha_lesson2.Utils.MOTHERLAND
 import ru.aston.sarancha_lesson2.Utils.navigator
-import ru.aston.sarancha_lesson2.Vacancy
 import ru.aston.sarancha_lesson2.contract.HasCustomTitle
 import ru.aston.sarancha_lesson2.databinding.FragmentOfficesBinding
 
@@ -90,35 +89,25 @@ class OfficesFragment : Fragment(), HasCustomTitle {
                 getString(R.string.polotsk),
                 R.drawable.belarus,
                 ABROAD,
-                getString(R.string.polotsk)
+                getString(R.string.addressPolotsk)
             ),
             OfficeAddress(
                 getString(R.string.kazakhstan),
                 getString(R.string.almaty),
                 R.drawable.kazakhstan,
                 ABROAD,
-                getString(R.string.almaty)
-            ),
-
+                getString(R.string.addressAlmaty)
+            )
         )
 
-        val adapter = RecyclerAdapter(offices)
+        val adapter = RecyclerAdapter(offices).apply {
+
+            clickAction = { navigator().showOfficeInfoScreen(offices[itemPos]) }
+        }
+
         with(binding) {
             recyclerOfficesContainer.adapter = adapter
         }
-
-//        with(binding) {
-//
-//            officeFirst.setOnClickListener {
-//                navigator().showOfficeInfoScreen(offices[0])
-//            }
-//            officeSecond.setOnClickListener {
-//                navigator().showOfficeInfoScreen(offices[0])
-//            }
-//            officeThird.setOnClickListener {
-//                navigator().showOfficeInfoScreen(offices[0])
-//            }
-//        }
     }
 
     override fun getTitleRes(): Int = R.string.titleOffices

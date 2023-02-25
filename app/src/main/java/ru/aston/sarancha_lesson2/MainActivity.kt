@@ -6,12 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import kotlinx.android.synthetic.main.fragment_main.*
-import ru.aston.sarancha_lesson2.view.*
 import ru.aston.sarancha_lesson2.Utils.makeGone
 import ru.aston.sarancha_lesson2.Utils.makeVisible
 import ru.aston.sarancha_lesson2.contract.HasCustomTitle
 import ru.aston.sarancha_lesson2.contract.Navigator
 import ru.aston.sarancha_lesson2.databinding.ActivityMainBinding
+import ru.aston.sarancha_lesson2.view.*
 
 class MainActivity : AppCompatActivity(), Navigator {
 

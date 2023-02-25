@@ -10,7 +10,7 @@ data class OfficeAddress(
     override val bodyText: String,
     override val imageSrc: Int,
     override val type: Int = MOTHERLAND,
-    val address: String
+    val address: String = ""
 ) : MyViewDto(), Parcelable
 
 sealed class MyViewDto {

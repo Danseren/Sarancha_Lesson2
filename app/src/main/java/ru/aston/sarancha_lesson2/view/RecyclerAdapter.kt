@@ -1,5 +1,6 @@
 package ru.aston.sarancha_lesson2.view
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,9 @@ import ru.aston.sarancha_lesson2.databinding.RecyclerItemBinding
 
 class RecyclerAdapter(private val listData: List<MyViewDto>) :
     RecyclerView.Adapter<RecyclerAdapter.BaseViewHolder>() {
+
+    var clickAction: ((MyViewDto) -> Unit)? = null
+    var itemPos: Int = 1
 
     override fun getItemViewType(position: Int): Int {
         return listData[position].type
@@ -39,16 +43,30 @@ class RecyclerAdapter(private val listData: List<MyViewDto>) :
         when (holder) {
             is MyViewHolder -> {
                 with(holder.binding) {
-                    custom.setHeaderText(listData[position].headerText)
-                    custom.setBodyText(listData[position].bodyText)
-                    custom.setImageSrc(listData[position].imageSrc)
+                    custom.apply {
+                        setHeaderText(listData[position].headerText)
+                        setBodyText(listData[position].bodyText)
+                        setImageSrc(listData[position].imageSrc)
+                        setOnClickListener {
+                            itemPos = position
+                            clickAction?.invoke(listData[position])
+                        }
+                    }
+
                 }
             }
             is AbroadCountryViewHolder -> {
                 with(holder.binding) {
-                    custom.setHeaderText(listData[position].headerText)
-                    custom.setBodyText(listData[position].bodyText)
-                    custom.setImageSrc(listData[position].imageSrc)
+                    custom.apply {
+
+                        setHeaderText(listData[position].headerText)
+                        setBodyText(listData[position].bodyText)
+                        setImageSrc(listData[position].imageSrc)
+                        setOnClickListener {
+                            itemPos = position
+                            clickAction?.invoke(listData[position])
+                        }
+                    }
                 }
             }
         }
