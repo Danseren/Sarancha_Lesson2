@@ -3,9 +3,9 @@ package ru.aston.sarancha_lesson2
 import ru.aston.sarancha_lesson2.Utils.WHITE_COLLAR
 
 data class Vacancy(
-    val headerText: String = "Title",
-    val bodyText: String = "Title",
-    val imageSrc: Int,
-    val language: String,
-    val type: Int = WHITE_COLLAR
-)
+    override val headerText: String = "Title",
+    override val bodyText: String = "Title",
+    override val imageSrc: Int,
+    override val type: Int = WHITE_COLLAR,
+    val language: String
+) : MyViewDto()

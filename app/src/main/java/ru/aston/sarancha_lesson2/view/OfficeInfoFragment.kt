@@ -46,8 +46,8 @@ class OfficeInfoFragment : Fragment(), HasCustomTitle {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
-            tvCountry.text = officeAddress.country
-            tvCity.text = officeAddress.city
+            tvCountry.text = officeAddress.bodyText
+            tvCity.text = officeAddress.bodyText
             tvAddress.text = officeAddress.address
         }
     }

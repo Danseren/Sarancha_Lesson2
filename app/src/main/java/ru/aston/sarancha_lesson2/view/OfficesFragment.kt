@@ -7,7 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.aston.sarancha_lesson2.OfficeAddress
 import ru.aston.sarancha_lesson2.R
+import ru.aston.sarancha_lesson2.Utils.ABROAD
+import ru.aston.sarancha_lesson2.Utils.MOTHERLAND
 import ru.aston.sarancha_lesson2.Utils.navigator
+import ru.aston.sarancha_lesson2.Vacancy
 import ru.aston.sarancha_lesson2.contract.HasCustomTitle
 import ru.aston.sarancha_lesson2.databinding.FragmentOfficesBinding
 
@@ -31,36 +34,91 @@ class OfficesFragment : Fragment(), HasCustomTitle {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val dataOfficeAddress = arrayListOf(
+        val offices = arrayListOf(
+
             OfficeAddress(
-                getString(R.string.cvOfficeFirstHeader),
-                getString(R.string.cvOfficeFirstBody),
-                getString(R.string.addressFirstOffice)
+                getString(R.string.russia),
+                getString(R.string.moscow),
+                R.drawable.russia,
+                MOTHERLAND,
+                getString(R.string.addressMoscow)
             ),
             OfficeAddress(
-                getString(R.string.cvOfficeSecondHeader),
-                getString(R.string.cvOfficeSecondBody),
-                getString(R.string.addressSecondOffice)
+                getString(R.string.russia),
+                getString(R.string.stPetersburg),
+                R.drawable.russia,
+                MOTHERLAND,
+                getString(R.string.addressStPetersburg)
             ),
             OfficeAddress(
-                getString(R.string.cvOfficeThirdHeader),
-                getString(R.string.cvOfficeThirdBody),
-                getString(R.string.addressThirdOffice)
-            )
+                getString(R.string.russia),
+                getString(R.string.rostovOnDon),
+                R.drawable.russia,
+                MOTHERLAND,
+                getString(R.string.addressRostovOnDon)
+            ),
+            OfficeAddress(
+                getString(R.string.russia),
+                getString(R.string.kazan),
+                R.drawable.russia,
+                MOTHERLAND,
+                getString(R.string.addressKazan)
+            ),
+            OfficeAddress(
+                getString(R.string.belarus),
+                getString(R.string.minsk),
+                R.drawable.belarus,
+                ABROAD,
+                getString(R.string.addressMinsk)
+            ),
+            OfficeAddress(
+                getString(R.string.belarus),
+                getString(R.string.vitebsk),
+                R.drawable.belarus,
+                ABROAD,
+                getString(R.string.addressVitebsk)
+            ),
+            OfficeAddress(
+                getString(R.string.belarus),
+                getString(R.string.gomel),
+                R.drawable.belarus,
+                ABROAD,
+                getString(R.string.addressGomel)
+            ),
+            OfficeAddress(
+                getString(R.string.belarus),
+                getString(R.string.polotsk),
+                R.drawable.belarus,
+                ABROAD,
+                getString(R.string.polotsk)
+            ),
+            OfficeAddress(
+                getString(R.string.kazakhstan),
+                getString(R.string.almaty),
+                R.drawable.kazakhstan,
+                ABROAD,
+                getString(R.string.almaty)
+            ),
+
         )
 
+        val adapter = RecyclerAdapter(offices)
         with(binding) {
-
-            officeFirst.setOnClickListener {
-                navigator().showOfficeInfoScreen(dataOfficeAddress[0])
-            }
-            officeSecond.setOnClickListener {
-                navigator().showOfficeInfoScreen(dataOfficeAddress[1])
-            }
-            officeThird.setOnClickListener {
-                navigator().showOfficeInfoScreen(dataOfficeAddress[2])
-            }
+            recyclerOfficesContainer.adapter = adapter
         }
+
+//        with(binding) {
+//
+//            officeFirst.setOnClickListener {
+//                navigator().showOfficeInfoScreen(offices[0])
+//            }
+//            officeSecond.setOnClickListener {
+//                navigator().showOfficeInfoScreen(offices[0])
+//            }
+//            officeThird.setOnClickListener {
+//                navigator().showOfficeInfoScreen(offices[0])
+//            }
+//        }
     }
 
     override fun getTitleRes(): Int = R.string.titleOffices

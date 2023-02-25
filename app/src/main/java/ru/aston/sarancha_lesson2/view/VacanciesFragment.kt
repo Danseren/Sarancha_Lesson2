@@ -39,141 +39,141 @@ class VacanciesFragment : Fragment(), HasCustomTitle {
                 getString(R.string.backend),
                 getString(R.string.backendDescription),
                 R.drawable.worker_64,
-                getString(R.string.kotlin),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.kotlin)
             ),
             Vacancy(
                 getString(R.string.frontend),
                 getString(R.string.frontendDescription),
                 R.drawable.worker_64,
-                getString(R.string.java),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.java)
             ),
             Vacancy(
                 getString(R.string.teamLead),
                 getString(R.string.teamLeadDescription),
                 R.drawable.worker_64,
-                getString(R.string.kotlin),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.kotlin)
             ),
             Vacancy(
                 getString(R.string.backend),
                 getString(R.string.backendDescription),
                 R.drawable.worker_64,
-                getString(R.string.kotlin),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.kotlin)
             ),
             Vacancy(
                 getString(R.string.deputyDirector),
                 getString(R.string.deputyDirectorDescription),
                 R.drawable.structure,
-                getString(R.string.none),
-                GOLD_COLLAR
+                GOLD_COLLAR,
+                getString(R.string.none)
             ),
             Vacancy(
                 getString(R.string.cleaner),
                 getString(R.string.cleanerDescription),
                 R.drawable.household,
-                getString(R.string.none),
-                BLUE_COLLAR
+                BLUE_COLLAR,
+                getString(R.string.none)
             ),
             Vacancy(
                 getString(R.string.backend),
                 getString(R.string.backendDescription),
                 R.drawable.worker_64,
-                getString(R.string.kotlin),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.kotlin)
             ),
             Vacancy(
                 getString(R.string.frontend),
                 getString(R.string.frontendDescription),
                 R.drawable.worker_64,
-                getString(R.string.java),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.java)
             ),
             Vacancy(
                 getString(R.string.director),
                 getString(R.string.directorDescription),
                 R.drawable.structure,
-                getString(R.string.none),
-                GOLD_COLLAR
+                GOLD_COLLAR,
+                getString(R.string.none)
             ),
             Vacancy(
                 getString(R.string.cleaner),
                 getString(R.string.cleanerDescription),
                 R.drawable.household,
-                getString(R.string.none),
-                BLUE_COLLAR
+                BLUE_COLLAR,
+                getString(R.string.none)
             ),
             Vacancy(
                 getString(R.string.guard),
                 getString(R.string.guardDescription),
                 R.drawable.guard,
-                getString(R.string.none),
-                BLUE_COLLAR
+                BLUE_COLLAR,
+                getString(R.string.none)
             ),
             Vacancy(
                 getString(R.string.frontend),
                 getString(R.string.frontendDescription),
                 R.drawable.worker_64,
-                getString(R.string.java),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.java)
             ),
             Vacancy(
                 getString(R.string.teamLead),
                 getString(R.string.teamLeadDescription),
                 R.drawable.worker_64,
-                getString(R.string.java),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.java)
             ),
             Vacancy(
                 getString(R.string.backend),
                 getString(R.string.backendDescription),
                 R.drawable.worker_64,
-                getString(R.string.kotlin),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.kotlin)
             ),
             Vacancy(
                 getString(R.string.backend),
                 getString(R.string.backendDescription),
                 R.drawable.worker_64,
-                getString(R.string.kotlin),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.kotlin)
             ),
             Vacancy(
                 getString(R.string.guard),
                 getString(R.string.guardDescription),
                 R.drawable.guard,
-                getString(R.string.none),
-                BLUE_COLLAR
+                BLUE_COLLAR,
+                getString(R.string.none)
             ),
             Vacancy(
                 getString(R.string.backend),
                 getString(R.string.backendDescription),
                 R.drawable.worker_64,
-                getString(R.string.kotlin),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.kotlin)
             ),
             Vacancy(
                 getString(R.string.backend),
                 getString(R.string.backendDescription),
                 R.drawable.worker_64,
-                getString(R.string.kotlin),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.kotlin)
             ),
             Vacancy(
                 getString(R.string.backend),
                 getString(R.string.backendDescription),
                 R.drawable.worker_64,
-                getString(R.string.kotlin),
-                WHITE_COLLAR
+                WHITE_COLLAR,
+                getString(R.string.kotlin)
             ),
             Vacancy(
                 getString(R.string.cleaner),
                 getString(R.string.cleanerDescription),
                 R.drawable.household,
-                getString(R.string.none),
-                BLUE_COLLAR
+                GOLD_COLLAR,
+                getString(R.string.none)
             ),
         )
 

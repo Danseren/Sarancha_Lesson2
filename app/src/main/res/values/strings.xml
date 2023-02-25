@@ -1,23 +1,31 @@
 <resources>
     <string name="app_name">Aston intensive</string>
     <string name="contentDescription">content description</string>
+
     <string name="tvLogoHeader">ИТ-решения для развития бизнеса</string>
     <string name="tvLogoText">Разработка программного обеспечения</string>
     <string name="tvVacancyText">Проектировка и реализация</string>
     <string name="tvVacancyHeader">Работник</string>
     <string name="tvAboutHeader">О нас:</string>
     <string name="tvAbout">Aston – компания по разработке ПО с полным циклом услуг. Уже 15 лет мы помогаем заказчикам по всему миру трансформировать бизнес, создавая эффективные мобильные и десктопные решения.</string>
+    <string name="tvEntrance">Вход</string>
+    <string name="tvCountryHeader">Беларусь</string>
+    <string name="tvCityText">Минск</string>
+
     <string name="textLabelMain">Главная</string>
     <string name="textLabelOffices">Офисы</string>
     <string name="textLabelVacancies">Вакансии</string>
+
     <string name="titleAbout">О нас</string>
     <string name="titleVacancies">Вакансии</string>
     <string name="titleOffices">Офисы</string>
     <string name="wrongPasswordMessage">Неверный пароль</string>
-    <string name="tvEntrance">Вход</string>
+
     <string name="hintLayoutLogin">Login</string>
     <string name="hintLayoutPassword">Password</string>
+
     <string name="btnEntrance">Войти</string>
+
     <string name="cvFirstHeader">Начальник</string>
     <string name="cvFirstBody">Руководить небольшим коллективом</string>
     <string name="cvSecondHeader">Менеджер</string>
@@ -30,9 +38,11 @@
     <string name="cvOfficeSecondBody">Минск</string>
     <string name="cvOfficeThirdHeader">Казахстан</string>
     <string name="cvOfficeThirdBody">Алматы</string>
-    <string name="addressFirstOffice">БЦ «Башня Империя», 3 подъезд, 53 этаж, офис 13</string>
-    <string name="addressSecondOffice">пр-т Победителей, 7А</string>
-    <string name="addressThirdOffice">Бостандыкский район, микрорайон Коктем-2, здание 22</string>
+
+<!--    <string name="addressFirstOffice">БЦ «Башня Империя», 3 подъезд, 53 этаж, офис 13</string>-->
+<!--    <string name="addressSecondOffice">пр-т Победителей, 7А</string>-->
+<!--    <string name="addressThirdOffice">Бостандыкский район, микрорайон Коктем-2, здание 22</string>-->
+
     <string name="backend">Backend разработчик</string>
     <string name="backendDescription">Разработка и сопровождение серверной части приложений</string>
     <string name="frontend">Frontend-разработчик</string>
@@ -50,4 +60,26 @@
     <string name="kotlin">Kotlin</string>
     <string name="java">Java</string>
     <string name="none">None</string>
+
+    <string name="russia">Россия</string>
+    <string name="belarus">Беларусь</string>
+    <string name="kazakhstan">Казахстан</string>
+    <string name="moscow">Москва</string>
+    <string name="stPetersburg">Санкт-Петербург</string>
+    <string name="rostovOnDon">Ростов-на-Дону</string>
+    <string name="kazan">Казань</string>
+    <string name="minsk">Минск</string>
+    <string name="gomel">Гомель</string>
+    <string name="vitebsk">Витебск</string>
+    <string name="polotsk">Полоцк</string>
+    <string name="almaty">Алматы</string>
+    <string name="addressMoscow">БЦ «Башня Империя», 3 подъезд, 53 этаж, офис 13</string>
+    <string name="addressStPetersburg">Владимирский проспект, 23, БЦ «Ренессанс Холл», 8 этаж, 801</string>
+    <string name="addressRostovOnDon">ул. Текучева, 246, 3 этаж</string>
+    <string name="addressKazan">ул. Н. Ершова, 76/1, оф. 213</string>
+    <string name="addressMinsk">пр-т Победителей, 7А</string>
+    <string name="addressGomel">ул. Советская, 41Б</string>
+    <string name="addressVitebsk">ул. Строителей, 11А; Московский проспект, 70, корп.1</string>
+    <string name="addressPolotsk">ул. Октябрьская, 25</string>
+    <string name="addressAlmaty">Бостандыкский район, микрорайон Коктем-2, здание 22</string>
 </resources>

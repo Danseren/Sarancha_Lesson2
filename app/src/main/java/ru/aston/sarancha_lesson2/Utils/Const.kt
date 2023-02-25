@@ -7,3 +7,6 @@ const val ARG_OPTIONS = "ARG_OPTIONS"
 const val BLUE_COLLAR = 0
 const val WHITE_COLLAR = 1
 const val GOLD_COLLAR = 2
+
+const val ABROAD = 3
+const val MOTHERLAND = 4
