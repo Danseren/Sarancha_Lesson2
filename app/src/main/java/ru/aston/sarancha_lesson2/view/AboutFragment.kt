@@ -29,10 +29,6 @@ class AboutFragment : Fragment(), HasCustomTitle {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        with(binding) {
-
-        }
     }
 
     override fun getTitleRes(): Int = R.string.titleAbout

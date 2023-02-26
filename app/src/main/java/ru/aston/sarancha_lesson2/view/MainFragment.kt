@@ -31,23 +31,31 @@ class MainFragment : Fragment(), HasCustomTitle {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initViews()
+    }
+
+    private fun initViews() {
         with(binding) {
 
             bottomNavigation.apply {
                 setOnItemSelectedListener { item ->
                     when (item.itemId) {
+
                         R.id.itemMain -> {
                             navigator().showAboutScreen()
                             true
                         }
+
                         R.id.itemVacancies -> {
                             navigator().showVacanciesScreen()
                             true
                         }
+
                         R.id.itemOffices -> {
                             navigator().showOfficesScreen()
                             true
                         }
+
                         else -> {
                             true
                         }
@@ -57,7 +65,6 @@ class MainFragment : Fragment(), HasCustomTitle {
             }
         }
     }
-
 
     override fun getTitleRes(): Int {
 

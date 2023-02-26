@@ -2,7 +2,6 @@ package ru.aston.sarancha_lesson2.view
 
 import android.graphics.Color
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.aston.sarancha_lesson2.MyViewDto
@@ -10,9 +9,8 @@ import ru.aston.sarancha_lesson2.Utils.MOTHERLAND
 import ru.aston.sarancha_lesson2.databinding.RecyclerAbroadCountryBinding
 import ru.aston.sarancha_lesson2.databinding.RecyclerItemBinding
 
-
 class RecyclerAdapter(private val listData: List<MyViewDto>) :
-    RecyclerView.Adapter<RecyclerAdapter.BaseViewHolder>() {
+    RecyclerView.Adapter<BaseViewHolder>() {
 
     var clickAction: ((MyViewDto) -> Unit)? = null
     var itemPos: Int = 1
@@ -73,22 +71,6 @@ class RecyclerAdapter(private val listData: List<MyViewDto>) :
     }
 
     override fun getItemCount(): Int = listData.size
-
-    class MyViewHolder(
-        val binding: RecyclerItemBinding
-    ) : BaseViewHolder(binding.root) {
-        override fun bind(myViewDto: MyViewDto) {}
-    }
-
-    class AbroadCountryViewHolder(
-        val binding: RecyclerAbroadCountryBinding
-    ) : BaseViewHolder(binding.root) {
-        override fun bind(myViewDto: MyViewDto) {}
-    }
-
-    abstract class BaseViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        abstract fun bind(myViewDto: MyViewDto)
-    }
 }
 
 

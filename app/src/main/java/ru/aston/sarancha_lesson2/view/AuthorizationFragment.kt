@@ -39,8 +39,14 @@ class AuthorizationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initViews()
+    }
+
+    private fun initViews(){
         with(binding) {
+
             btnEntrance.apply {
+
                 isEnabled = false
                 setOnClickListener {
                     when (etPassword.text.toString()) {
@@ -49,7 +55,6 @@ class AuthorizationFragment : Fragment() {
                             Timer().schedule(2000) {
                                 navigator().showMainScreen()
                             }
-
                         }
                     }
                 }
@@ -69,7 +74,6 @@ class AuthorizationFragment : Fragment() {
                         else -> TextInputLayoutPassword.error =
                             getString(R.string.wrongPasswordMessage)
                     }
-
                 }
 
                 override fun beforeTextChanged(

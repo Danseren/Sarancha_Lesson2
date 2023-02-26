@@ -10,6 +10,6 @@
         android:layout_height="@dimen/vacancyHeight"
         android:layout_marginStart="@dimen/marginMedium"
         android:layout_marginTop="@dimen/marginMedium"
-        android:layout_marginEnd="@dimen/marginMedium"/>
+        android:layout_marginEnd="@dimen/marginMedium" />
 
 </FrameLayout>
