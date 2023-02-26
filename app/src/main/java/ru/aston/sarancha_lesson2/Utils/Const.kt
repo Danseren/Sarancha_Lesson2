@@ -10,3 +10,7 @@ const val GOLD_COLLAR = 2
 
 const val ABROAD = 3
 const val MOTHERLAND = 4
+
+const val KOTLIN = 0
+const val JAVA = 1
+const val PYTHON = 2

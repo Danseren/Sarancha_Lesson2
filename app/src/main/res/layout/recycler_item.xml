@@ -7,7 +7,7 @@
     <ru.aston.sarancha_lesson2.view.CustomView
         android:id="@+id/custom"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/vacancyHeight"
         android:layout_marginStart="@dimen/marginMedium"
         android:layout_marginTop="@dimen/marginMedium"
         android:layout_marginEnd="@dimen/marginMedium"/>

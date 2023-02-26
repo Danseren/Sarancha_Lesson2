@@ -8,6 +8,6 @@
     <dimen name="chipSpacingHorizontal">4dp</dimen>
     <dimen name="btnTextSize">20sp</dimen>
     <dimen name="radius">8dp</dimen>
-    <dimen name="vacancyHeight">110dp</dimen>
+    <dimen name="vacancyHeight">100dp</dimen>
     <dimen name="elevation">8dp</dimen>
 </resources>

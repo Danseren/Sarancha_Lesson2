@@ -11,5 +11,6 @@
         <attr name="countryFlagSrc" format="integer" />
         <attr name="countryText" format="string" />
         <attr name="cityText" format="string" />
+        <attr name="color" format="color" />
     </declare-styleable>
 </resources>

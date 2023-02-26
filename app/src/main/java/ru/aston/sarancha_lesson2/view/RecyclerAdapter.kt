@@ -58,10 +58,10 @@ class RecyclerAdapter(private val listData: List<MyViewDto>) :
             is AbroadCountryViewHolder -> {
                 with(holder.binding) {
                     custom.apply {
-
                         setHeaderText(listData[position].headerText)
                         setBodyText(listData[position].bodyText)
                         setImageSrc(listData[position].imageSrc)
+                        setColor(Color.GRAY)
                         setOnClickListener {
                             itemPos = position
                             clickAction?.invoke(listData[position])
@@ -78,7 +78,6 @@ class RecyclerAdapter(private val listData: List<MyViewDto>) :
         val binding: RecyclerItemBinding
     ) : BaseViewHolder(binding.root) {
         override fun bind(myViewDto: MyViewDto) {}
-
     }
 
     class AbroadCountryViewHolder(

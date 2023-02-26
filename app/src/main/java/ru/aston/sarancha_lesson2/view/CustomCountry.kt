@@ -1,6 +1,7 @@
 package ru.aston.sarancha_lesson2.view
 
 import android.content.Context
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -47,6 +48,9 @@ class CustomCountry(
         val bodyText = typedArray.getString(R.styleable.CustomCountry_cityText)
         setBodyText(bodyText)
 
+        val color = typedArray.getColor(R.styleable.CustomCountry_color, Color.GRAY)
+        setColor(color)
+
         typedArray.recycle()
     }
 
@@ -60,5 +64,9 @@ class CustomCountry(
 
     fun setImageSrc(imageSrc: Int) {
         binding.ivLogo.setImageResource(imageSrc)
+    }
+
+    fun setColor(color: Int) {
+        binding.cardConstraintLayout.setBackgroundColor(color)
     }
 }

@@ -33,7 +33,19 @@ class OfficesFragment : Fragment(), HasCustomTitle {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val offices = arrayListOf(
+        val offices = initOfficesList()
+
+        val adapter = RecyclerAdapter(offices).apply {
+            clickAction = { navigator().showOfficeInfoScreen(offices[itemPos]) }
+        }
+
+        with(binding) {
+            recyclerOfficesContainer.adapter = adapter
+        }
+    }
+
+    private fun initOfficesList(): ArrayList<OfficeAddress> {
+        return arrayListOf(
 
             OfficeAddress(
                 getString(R.string.russia),
@@ -99,15 +111,6 @@ class OfficesFragment : Fragment(), HasCustomTitle {
                 getString(R.string.addressAlmaty)
             )
         )
-
-        val adapter = RecyclerAdapter(offices).apply {
-
-            clickAction = { navigator().showOfficeInfoScreen(offices[itemPos]) }
-        }
-
-        with(binding) {
-            recyclerOfficesContainer.adapter = adapter
-        }
     }
 
     override fun getTitleRes(): Int = R.string.titleOffices
