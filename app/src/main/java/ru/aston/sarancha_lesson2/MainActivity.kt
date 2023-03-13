@@ -3,25 +3,28 @@ package ru.aston.sarancha_lesson2
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doOnTextChanged
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.*
 import io.reactivex.rxjava3.schedulers.Schedulers
+import io.reactivex.rxjava3.subjects.PublishSubject
 import ru.aston.sarancha_lesson2.databinding.ActivityMainBinding
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val editTextSubject = PublishSubject.create<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initButtons()
+        initViews()
     }
 
-    private fun initButtons() {
+    private fun initViews() {
         with(binding) {
 
             btnObservable.setOnClickListener {
@@ -43,6 +46,12 @@ class MainActivity : AppCompatActivity() {
             btnSingle.setOnClickListener {
                 btnSingleAction()
             }
+
+            editText.doOnTextChanged { text, _, _, _ ->
+                editTextSubject.onNext(text.toString())
+            }
+
+            showTextWithDebounce()
         }
     }
 
@@ -141,5 +150,13 @@ class MainActivity : AppCompatActivity() {
                     Log.d("@@@", "Single: Error")
                 }
             )
+    }
+
+    private fun showTextWithDebounce() {
+        editTextSubject.debounce(1000, TimeUnit.MILLISECONDS)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
+                binding.tvResult.text = it
+            }
     }
 }
