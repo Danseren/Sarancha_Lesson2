@@ -52,6 +52,10 @@ class MainActivity : AppCompatActivity() {
             }
 
             showTextWithDebounce()
+
+            btnParityCheck.setOnClickListener {
+                threeSubscribers()
+            }
         }
     }
 
@@ -158,5 +162,59 @@ class MainActivity : AppCompatActivity() {
             .subscribe {
                 binding.tvResult.text = it
             }
+    }
+
+    private fun threeSubscribers() {
+
+        val oneHundredSource = Observable.range(1, 100)
+
+        oneHundredSource
+            .filter{i -> i % 2 == 0}
+            .subscribeOn(Schedulers.computation())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Log.d("@@@", "Even number: $it")
+                },
+                {
+                    Log.d("@@@", "Even number: Error")
+                },
+                {
+                    Log.d("@@@", "Parity check: Complete")
+                }
+            )
+
+        oneHundredSource
+            .subscribeOn(Schedulers.computation())
+            .takeLast(10)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Log.d("@@@", "Last ten: $it")
+                },
+                {
+                    Log.d("@@@", "Last ten: Error")
+                },
+                {
+                    Log.d("@@@", "Last ten: Complete")
+                }
+            )
+
+        oneHundredSource
+            .filter{i -> i % 3 == 0 && i % 5 == 0}
+            .subscribeOn(Schedulers.computation())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Log.d("@@@", "Divider 3 and 5: $it")
+                },
+                {
+                    Log.d("@@@", "Divider 3 and 5r: Error")
+                },
+                {
+                    Log.d("@@@", "Divider 3 and 5: Complete")
+                }
+            )
+
     }
 }
