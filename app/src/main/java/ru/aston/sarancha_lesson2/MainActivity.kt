@@ -1,13 +1,145 @@
 package ru.aston.sarancha_lesson2
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.*
+import io.reactivex.rxjava3.schedulers.Schedulers
+import ru.aston.sarancha_lesson2.databinding.ActivityMainBinding
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        initButtons()
+    }
+
+    private fun initButtons() {
+        with(binding) {
+
+            btnObservable.setOnClickListener {
+                btnObservableAction()
+            }
+
+            btnFlowable.setOnClickListener {
+                btnFlowableAction()
+            }
+
+            btnCompletable.setOnClickListener {
+                btnCompletableAction()
+            }
+
+            btnMaybe.setOnClickListener {
+                btnMaybeAction()
+            }
+
+            btnSingle.setOnClickListener {
+                btnSingleAction()
+            }
+        }
+    }
+
+    private fun btnObservableAction() {
+        val observableSource = Observable.just(1, 2, 3, 4, 5, 6)
+        observableSource
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Log.d("@@@", "Observable: Next int: $it")
+                },
+                {
+                    Log.d("@@@", "Observable: Error")
+                },
+                {
+                    Log.d("@@@", "Observable: Complete")
+                }
+            )
+    }
+
+    private fun btnFlowableAction() {
+        val randomBackpressureStrategy = when ((0..4).random()) {
+            0 -> BackpressureStrategy.MISSING
+            1 -> BackpressureStrategy.BUFFER
+            2 -> BackpressureStrategy.LATEST
+            3 -> BackpressureStrategy.DROP
+            else -> BackpressureStrategy.ERROR
+        }
+        Flowable.create({ subscriber ->
+            for (i in 0..500) {
+                subscriber.onNext(i)
+            }
+            subscriber.onComplete()
+        }, randomBackpressureStrategy)
+            .subscribeOn(Schedulers.computation())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Log.d("@@@", "Flowable: Next int: $it")
+                },
+                {
+                    Log.d("@@@", "Flowable ($randomBackpressureStrategy): Error")
+                },
+                {
+                    Log.d("@@@", "Flowable ($randomBackpressureStrategy): Complete")
+                }
+            )
+    }
+
+    private fun btnCompletableAction() {
+        val completableSource = Completable.timer(1500, TimeUnit.MILLISECONDS)
+        completableSource
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Log.d("@@@", "Completable: Success")
+                },
+                {
+                    Log.d("@@@", "Completable: Error")
+                }
+            )
+    }
+
+    private fun btnMaybeAction() {
+        val obs1 =
+            Maybe.just("The Answer to the Ultimate Question of Life, the Universe, and Everything is ")
+        val obs2 = Maybe.just(42)
+        Maybe.merge(obs1, obs2)
+            .subscribeOn(Schedulers.computation())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Log.d("@@@", "$it")
+                },
+                {
+                    Log.d("@@@", "Maybe: Error")
+                },
+                {
+                    Log.d("@@@", "Maybe: Complete")
+                }
+            )
+    }
+
+    private fun btnSingleAction() {
+        val singleSource = Single.timer(1, TimeUnit.SECONDS)
+        singleSource
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Log.d("@@@", "Single: Success")
+                },
+                {
+                    Log.d("@@@", "Single: Error")
+                }
+            )
     }
 }
