@@ -56,6 +56,10 @@ class MainActivity : AppCompatActivity() {
             btnParityCheck.setOnClickListener {
                 threeSubscribers()
             }
+
+            btnConcatAndMerge.setOnClickListener {
+                concatAndMerge()
+            }
         }
     }
 
@@ -215,6 +219,45 @@ class MainActivity : AppCompatActivity() {
                     Log.d("@@@", "Divider 3 and 5: Complete")
                 }
             )
+    }
 
+    private fun concatAndMerge() {
+        val firstFiftySource = Observable.range(1, 50)
+        val secondFiftySource = Observable.range(51, 50)
+
+        Observable.concat(firstFiftySource, secondFiftySource)
+            .subscribeOn(Schedulers.computation())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Log.d("@@@", "Concat: $it")
+                },
+                {
+                    Log.d("@@@", "Concat: Error")
+                },
+                {
+                    Log.d("@@@", "Concat: Complete")
+                }
+            )
+
+        Observable.merge(
+            Observable.interval(1, TimeUnit.SECONDS).map { id -> "A$id" },
+            Observable.interval(1, TimeUnit.SECONDS).map { id -> "B$id" })
+            .subscribe(System.out::println)
+
+        Observable.merge(firstFiftySource, secondFiftySource)
+            .subscribeOn(Schedulers.computation())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Log.d("@@@", "Merge: $it")
+                },
+                {
+                    Log.d("@@@", "Merge: Error")
+                },
+                {
+                    Log.d("@@@", "Merge: Complete")
+                }
+            )
     }
 }
