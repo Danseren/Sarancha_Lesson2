@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.*
+import io.reactivex.rxjava3.functions.BiFunction
 import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.subjects.PublishSubject
 import ru.aston.sarancha_lesson2.databinding.ActivityMainBinding
@@ -59,6 +60,10 @@ class MainActivity : AppCompatActivity() {
 
             btnConcatAndMerge.setOnClickListener {
                 concatAndMerge()
+            }
+
+            btnDivision.setOnClickListener {
+                Log.d("@@@", "result: ${divisionAndZip(84, 2)}")
             }
         }
     }
@@ -173,7 +178,7 @@ class MainActivity : AppCompatActivity() {
         val oneHundredSource = Observable.range(1, 100)
 
         oneHundredSource
-            .filter{i -> i % 2 == 0}
+            .filter { i -> i % 2 == 0 }
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
@@ -205,7 +210,7 @@ class MainActivity : AppCompatActivity() {
             )
 
         oneHundredSource
-            .filter{i -> i % 3 == 0 && i % 5 == 0}
+            .filter { i -> i % 3 == 0 && i % 5 == 0 }
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
@@ -259,5 +264,15 @@ class MainActivity : AppCompatActivity() {
                     Log.d("@@@", "Merge: Complete")
                 }
             )
+    }
+
+    private fun divisionAndZip(dividend: Int, divisor: Int) {
+        val dividendObservable = Observable.just(dividend.toLong())
+        val divisorObservable = Observable.just(divisor.toLong())
+        val zipper = BiFunction<Long, Long, Long> { dividend, divisor -> dividend.div(divisor) }
+        Observable.zip(dividendObservable, divisorObservable, zipper)
+            .subscribe {
+                Log.d("@@@", "Division result: $dividend/$divisor = $it")
+            }
     }
 }
